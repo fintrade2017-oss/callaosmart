@@ -1,0 +1,2593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Crítico - Parking Callao (Gran Vía 48 / Tudescos)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #005A9C;
+            --secondary-color: #00A0E3;
+            --accent-color: #FFC107;
+            --text-color: #333333;
+            --bg-color: #f4f7f6;
+            --white-color: #FFFFFF;
+            --light-gray: #e0e0e0;
+            --dark-gray: #6c757d;
+            --negotiation-color: #d32f2f;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --currency-risk-color: #7b1fa2;
+            --comparison-color: #17a2b8;
+            --discrepancy-color: #e91e63;
+            --clarification-color: #4caf50;
+            --price-alert-color: #ff5722;
+            --financial-risk-color: #f44336;
+            --sotratec-blue: #003366;
+            --sotratec-gold: #a68966;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--white-color);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .header-text h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .header-text p {
+            color: var(--dark-gray);
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        #langToggle {
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        #langToggle:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--white-color);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        thead th {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: var(--bg-color);
+        }
+
+        tbody tr:hover {
+            background-color: #e9f5ff;
+        }
+
+        .highlight {
+            background-color: var(--accent-color) !important;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .negative-highlight {
+            background-color: var(--negotiation-color) !important;
+            color: var(--white-color);
+            font-weight: bold;
+        }
+
+        .currency-risk-highlight {
+            background-color: var(--currency-risk-color) !important;
+            color: var(--white-color);
+            font-weight: bold;
+        }
+
+        .comparison-highlight {
+            background-color: var(--comparison-color) !important;
+            color: var(--white-color);
+            font-weight: bold;
+        }
+
+        .discrepancy-highlight {
+            background-color: var(--discrepancy-color) !important;
+            color: var(--white-color);
+            font-weight: bold;
+        }
+
+        .clarification-highlight {
+            background-color: var(--clarification-color) !important;
+            color: var(--white-color);
+            font-weight: bold;
+        }
+
+        .price-alert-highlight {
+            background-color: var(--price-alert-color) !important;
+            color: var(--white-color);
+            font-weight: bold;
+        }
+
+        .financial-risk-highlight {
+            background-color: var(--financial-risk-color) !important;
+            color: var(--white-color);
+            font-weight: bold;
+        }
+
+        .positive {
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        .negative {
+            color: var(--danger-color);
+            font-weight: bold;
+        }
+
+        .disclaimer {
+            background-color: #fffbe6;
+            border: 1px solid #ffe58f;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+        
+        .disclaimer strong {
+            color: #d46b08;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .conclusion-box {
+            background-color: #e6f7ff;
+            border: 1px solid #91d5ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .conclusion-box h3 {
+            margin-top: 0;
+            color: #0050b3;
+        }
+        
+        .image-reference {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+        }
+        
+        .image-reference img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .image-reference p {
+            margin-top: 10px;
+            font-style: italic;
+            color: var(--dark-gray);
+        }
+
+        .negotiation-box {
+            border: 2px solid var(--negotiation-color);
+            background-color: #ffebee;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .negotiation-box h3 {
+            color: var(--negotiation-color);
+        }
+        
+        .specs-box {
+            background-color: #f0f8ff;
+            border: 1px solid #b0d4f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .specs-box h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+        
+        .specs-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .specs-box li {
+            background-color: #e6f3ff;
+            border-left: 4px solid var(--secondary-color);
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .two-column-list {
+            display: flex;
+            gap: 30px;
+        }
+        .two-column-list ul {
+            flex: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        /* Estilos adicionales para las nuevas secciones */
+        .executive-summary {
+            border: 1px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 8px;
+            background-color: #fdfdfd;
+            margin-bottom: 30px;
+        }
+
+        .executive-summary h2 {
+            margin-top: 0;
+            border: none;
+            padding: 0;
+        }
+
+        .data-sheet {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .data-item {
+            flex: 1;
+            min-width: 250px;
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .data-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .kpi-grid {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .kpi-card {
+            text-align: center;
+            background: var(--white-color);
+            border: 1px solid var(--light-gray);
+            padding: 15px;
+            border-radius: 5px;
+            width: 30%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .kpi-value {
+            display: block;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--negotiation-color);
+        }
+
+        .break-even {
+            background-color: var(--warning-color) !important;
+            font-weight: bold;
+        }
+
+        .logic-box {
+            background: #ebf2fa;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .highlight-box {
+            border-left: 5px solid var(--accent-color);
+            background: #fff5e6;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .total-row {
+            background-color: #ebf5fb;
+            font-weight: bold;
+        }
+
+        .alert-box {
+            background-color: #ffebee;
+            border: 1px solid var(--danger-color);
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .alert-box h3 {
+            color: var(--danger-color);
+            margin-top: 0;
+        }
+
+        .pro-tip {
+            font-style: italic;
+            color: #555;
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .currency-risk-box {
+            border: 2px solid var(--currency-risk-color);
+            background-color: #f3e5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .currency-risk-box h3 {
+            color: var(--currency-risk-color);
+            margin-top: 0;
+        }
+
+        .currency-risk-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .currency-risk-box li {
+            background-color: #e1bee7;
+            border-left: 4px solid var(--currency-risk-color);
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .currency-impact-table {
+            margin-top: 20px;
+        }
+
+        .currency-impact-table th {
+            background-color: var(--currency-risk-color);
+        }
+
+        /* Nuevos estilos para la sección de comparación */
+        .comparison-container {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .comparison-column {
+            flex: 1;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .comparison-column h3 {
+            text-align: center;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .comparison-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-item:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-label {
+            font-weight: 500;
+        }
+
+        .comparison-value {
+            font-weight: bold;
+        }
+
+        .discrepancy-box {
+            border: 2px solid var(--discrepancy-color);
+            background-color: #fce4ec;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .discrepancy-box h3 {
+            color: var(--discrepancy-color);
+            margin-top: 0;
+        }
+
+        .pdf-preview {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+        }
+
+        .pdf-preview h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .pdf-preview-content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+        }
+
+        .tab-container {
+            margin: 20px 0;
+        }
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--dark-gray);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .tab-content {
+            padding: 20px 0;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .resolution-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            border: 2px solid var(--success-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .resolution-box h3 {
+            color: var(--success-color);
+            margin-top: 0;
+        }
+
+        .action-steps {
+            counter-reset: step-counter;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .action-steps li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 15px;
+            counter-increment: step-counter;
+        }
+
+        .action-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .chart-container {
+            height: 300px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .chart-bar {
+            display: flex;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        .chart-label {
+            width: 150px;
+            text-align: right;
+            padding-right: 10px;
+            font-weight: 500;
+        }
+
+        .chart-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .chart-bar-fill.our-data {
+            background-color: var(--secondary-color);
+        }
+
+        .chart-bar-fill.seller-data {
+            background-color: var(--comparison-color);
+        }
+
+        .chart-bar-fill.discrepancy {
+            background-color: var(--discrepancy-color);
+        }
+
+        .pdf-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background-color: #f44336;
+            color: white;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .pdf-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .floating-action {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .floating-action:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        .clarification-box {
+            border: 2px solid var(--clarification-color);
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .clarification-box h3 {
+            color: var(--clarification-color);
+            margin-top: 0;
+        }
+
+        .price-alert-box {
+            border: 2px solid var(--price-alert-color);
+            background-color: #fbe9e7;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .price-alert-box h3 {
+            color: var(--price-alert-color);
+            margin-top: 0;
+        }
+
+        .financial-risk-box {
+            border: 2px solid var(--financial-risk-color);
+            background-color: #ffebee;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .financial-risk-box h3 {
+            color: var(--financial-risk-color);
+            margin-top: 0;
+        }
+
+        .financial-risk-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .financial-risk-box li {
+            background-color: #ffcdd2;
+            border-left: 4px solid var(--financial-risk-color);
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .price-comparison-table {
+            margin-top: 20px;
+        }
+
+        .price-comparison-table th {
+            background-color: var(--price-alert-color);
+        }
+
+        .financial-structure-table {
+            margin-top: 20px;
+        }
+
+        .financial-structure-table th {
+            background-color: var(--financial-risk-color);
+        }
+
+        .risk-meter {
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 15px;
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .risk-meter-fill {
+            height: 100%;
+            border-radius: 15px;
+            background: linear-gradient(to right, #4caf50, #ffeb3b, #ff5722);
+            width: 99%;
+        }
+
+        .risk-meter-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .warning-icon {
+            color: var(--warning-color);
+            margin-right: 8px;
+        }
+
+        .danger-icon {
+            color: var(--danger-color);
+            margin-right: 8px;
+        }
+
+        .currency-icon {
+            color: var(--currency-risk-color);
+            margin-right: 8px;
+        }
+
+        .evidence-box {
+            border: 2px solid var(--primary-color);
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .evidence-box h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        /* Estilos para el anexo de SOTRATEC */
+        .sotratec-section {
+            border: 2px solid var(--sotratec-blue);
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .sotratec-header {
+            border-bottom: 3px solid var(--sotratec-blue);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        .sotratec-subtitle {
+            color: var(--sotratec-gold);
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .sotratec-title {
+            color: var(--sotratec-blue);
+            font-size: 24px;
+            text-transform: uppercase;
+            margin: 5px 0;
+        }
+
+        .sotratec-section h2 {
+            color: var(--sotratec-blue);
+            background: #eef2f7;
+            padding: 10px;
+            border-left: 6px solid var(--sotratec-gold);
+            font-size: 1.2em;
+            margin-top: 30px;
+            border-bottom: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stats-card {
+            background: var(--sotratec-blue);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .stats-card span {
+            font-size: 0.8em;
+            display: block;
+            opacity: 0.8;
+        }
+
+        .stats-card b {
+            font-size: 1.4em;
+        }
+
+        .stats-card.highlight {
+            background: var(--danger);
+        }
+
+        .row-outlier {
+            background: #fff5f5;
+            color: var(--danger);
+            font-weight: bold;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 150px;
+            border-bottom: 2px solid #333;
+            margin: 40px 0;
+            padding-bottom: 5px;
+        }
+
+        .bar {
+            width: 15%;
+            background: var(--sotratec-gold);
+            position: relative;
+            transition: height 0.3s;
+        }
+
+        .bar span {
+            position: absolute;
+            top: -25px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .bar-label {
+            text-align: center;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+
+        .fiscal-warning {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .footer-note {
+            font-size: 0.8em;
+            color: var(--dark-gray);
+            font-style: italic;
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        /* Estilos para los nuevos informes de SOTRATEC */
+        .sotratec-report {
+            border: 2px solid var(--sotratec-blue);
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .sotratec-report-header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+
+        .sotratec-logo {
+            font-weight: bold;
+            color: var(--sotratec-blue);
+            letter-spacing: 2px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th {
+            background: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+        .source-dossier {
+            color: var(--sotratec-blue);
+            font-weight: bold;
+        }
+
+        .source-public {
+            color: var(--danger);
+            font-weight: bold;
+        }
+
+        .evidence-box-sotratec {
+            background: #fff3e0;
+            border: 1px solid #ff9800;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background: var(--sotratec-blue);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .web-capture-sim {
+            border: 2px solid #ddd;
+            background: #fff;
+            padding: 10px;
+            margin-top: 15px;
+            font-family: monospace;
+            font-size: 0.85em;
+        }
+
+        .alert-badge {
+            background: var(--danger);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 0.75em;
+            font-weight: bold;
+        }
+
+        .table-recalc {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .table-recalc th {
+            background: var(--sotratec-blue);
+            color: white;
+            padding: 12px;
+        }
+
+        .table-recalc td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .highlight-red {
+            color: var(--danger);
+            font-weight: bold;
+            background: #fff5f5;
+        }
+
+        .final-value {
+            background: var(--sotratec-blue);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+
+        .final-value h2 {
+            margin: 0;
+            font-size: 2em;
+            color: white;
+        }
+
+        /* Estilos para la LOI y carta de contraoferta */
+        .loi-section {
+            margin-top: 40px;
+            padding: 30px 0;
+            border-top: 2px solid var(--primary-color);
+        }
+
+        .loi-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border: 1px solid #ddd;
+        }
+
+        .header-table {
+            width: 100%;
+            border-bottom: 2px solid var(--sotratec-blue);
+            margin-bottom: 30px;
+        }
+
+        .confidential {
+            color: var(--danger);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            text-align: right;
+        }
+
+        .loi-title {
+            color: var(--sotratec-blue);
+            font-size: 1.6em;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 0;
+        }
+
+        .ref-box {
+            background: var(--bg-color);
+            padding: 15px;
+            border: 1px solid #eee;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+
+        .point-title {
+            font-weight: bold;
+            text-decoration: underline;
+            color: var(--sotratec-blue);
+            display: block;
+            margin-top: 20px;
+        }
+
+        .value-box {
+            text-align: center;
+            border: 2px double var(--sotratec-blue);
+            padding: 20px;
+            margin: 30px 0;
+            background: #f0f4f8;
+        }
+
+        .value-box b {
+            font-size: 1.8em;
+            color: var(--sotratec-blue);
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .sig-line {
+            border-top: 1px solid #333;
+            padding-top: 10px;
+            text-align: center;
+            font-size: 0.8em;
+        }
+
+        .print-button {
+            background-color: var(--sotratec-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            margin: 20px auto;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .print-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Estilos para las nuevas secciones */
+        .expense-normalization-section {
+            border: 2px solid var(--sotratec-blue);
+            padding: 25px;
+            background: #fff;
+            margin-top: 30px;
+            border-radius: 8px;
+        }
+
+        .expense-normalization-section h2 {
+            color: var(--sotratec-blue);
+            text-align: center;
+            border-bottom: 2px solid var(--sotratec-blue);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .expense-normalization-section table {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .expense-normalization-section th {
+            background: #eee;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .expense-normalization-section td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .expense-conclusion {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fdf2f2;
+            border-left: 5px solid var(--danger-color);
+        }
+
+        .valuation-analysis-section {
+            border: 2px solid #333;
+            padding: 30px;
+            background: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            margin-top: 30px;
+            border-radius: 8px;
+        }
+
+        .valuation-analysis-section h2 {
+            color: #b71c1c;
+            border-bottom: 2px solid #b71c1c;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .valuation-scenarios {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .valuation-scenario {
+            flex: 1;
+            border: 1px solid #ddd;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .valuation-scenario.bolton {
+            background: #f9f9f9;
+        }
+
+        .valuation-scenario.sotratec {
+            background: #e3f2fd;
+            border-color: var(--sotratec-blue);
+        }
+
+        .valuation-scenario h4 {
+            margin-top: 0;
+            color: #555;
+        }
+
+        .valuation-scenario.sotratec h4 {
+            color: var(--sotratec-blue);
+        }
+
+        .valuation-scenario ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .valuation-verdict {
+            background: #eee;
+            padding: 15px;
+            font-size: 0.9em;
+            border-left: 5px solid #b71c1c;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-container {
+                flex-direction: column;
+            }
+            
+            .kpi-grid {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .kpi-card {
+                width: 100%;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .signature-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .valuation-scenarios {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <img src="https://z-cdn-media.chatglm.cn/files/3512e86d-f67c-42b5-bdd5-0c34e601b1b5.png?auth_key=1874265345-d95614959c5e47d69b84afb1c7d5dfd9-0-b53b03479912d49e74c645595caf6b49" alt="Propfastinvest Group Ltd. Logo" class="logo">
+                <div class="header-text">
+                    <h1 data-translate-key="main-title">Análisis Crítico de Viabilidad</h1>
+                    <p data-translate-key="asset-info"><strong>Activo:</strong> Parking Callao (Gran Vía 48 / Tudescos)</p>
+                </div>
+            </div>
+            <button id="langToggle">EN</button>
+        </header>
+
+        <nav>
+            <a href="#descripcion" data-translate-key="nav-1">1. Descripción</a>
+            <a href="#precio-venta" data-translate-key="nav-2">2. Precio Venta</a>
+            <a href="#precios-servicio" data-translate-key="nav-3">3. Precios Servicio</a>
+            <a href="#estructura-legal" data-translate-key="nav-4">4. Estructura Legal</a>
+            <a href="#financiacion" data-translate-key="nav-5">5. Financiación</a>
+            <a href="#riesgo-cambio" data-translate-key="nav-6">6. Riesgo Cambio</a>
+            <a href="#sotratec" data-translate-key="nav-7">7. Análisis Mercado</a>
+            <a href="#discordancia-tecnica" data-translate-key="nav-8">8. Discordancia Técnica</a>
+            <a href="#recalculo-financiero" data-translate-key="nav-9">9. Recálculo Financiero</a>
+            <a href="#normalizacion-gastos" data-translate-key="nav-10">10. Normalización Gastos</a>
+            <a href="#analisis-valoracion" data-translate-key="nav-11">11. Análisis Valoración</a>
+            <a href="#resolucion" data-translate-key="nav-12">12. Resolución Final</a>
+            <a href="#contraoferta" data-translate-key="nav-13">13. Contraoferta</a>
+        </nav>
+
+        <main>
+            <section id="descripcion">
+                <h2 data-translate-key="desc-title">1. Descripción del Activo</h2>
+                <div class="executive-summary">
+                    <div class="data-sheet">
+                        <div class="data-item">
+                            <span class="data-label" data-translate-key="location-label">Ubicación</span>
+                            <span data-translate-key="location-value">Gran Vía 48 / Calle Tudescos 1-3, Madrid</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label" data-translate-key="cadastre-label">Referencia Catastral</span>
+                            <span data-translate-key="cadastre-value">1207505VK4710G0001YW</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label" data-translate-key="capacity-label">Capacidad</span>
+                            <span data-translate-key="capacity-value">320-345 Plazas Robotizadas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="clarification-box">
+                    <h3><i class="fas fa-check-circle"></i> <span data-translate-key="confirmation-title">Confirmación de Ubicación: Parking Callao</span></h3>
+                    <p data-translate-key="confirmation-text">Confirmamos que Gran Vía 48 y Calle Tudescos 1-3 corresponden al mismo aparcamiento, conocido comercialmente como <strong>Parking Callao</strong>. Es un edificio en esquina con diferentes accesos según la fachada.</p>
+                </div>
+
+                <div class="evidence-box">
+                    <h3><i class="fas fa-image"></i> <span data-translate-key="evidence-title">Evidencia Visual: Confirmación del Parking</span></h3>
+                    <p data-translate-key="evidence-text">La siguiente imagen confirma visualmente que se trata del mismo parking, mostrando la entrada principal con el branding "PARKING CALLAO" y el eslogan "EL PARKING ROBOTIZADO MÁS ESPECTACULAR DE MADRID":</p>
+                    
+                    <div class="image-reference">
+                        <img src="https://z-cdn-media.chatglm.cn/files/bbc79630-6efa-4707-8187-dd015257c5fa.jpeg?auth_key=1876173498-a6ae2d7bc5f448938a9edc99f11f20c3-0-f4b77bec19215e711fd36c6888a25750" alt="Entrada principal del Parking Callao">
+                        <p data-translate-key="image-caption">Entrada principal del Parking Callao en Gran Vía 48, confirmando que se trata del mismo activo referenciado en los documentos del vendedor.</p>
+                    </div>
+                    
+                    <div class="logic-box">
+                        <h3 data-translate-key="implications-title">Implicaciones de esta Confirmación</h3>
+                        <p data-translate-key="implications-text">Esta evidencia visual es crucial porque:</p>
+                        <ul>
+                            <li data-translate-key="implication-1"><strong>Confirma la Identidad del Activo:</strong> Elimina cualquier duda sobre si estábamos analizando el parking correcto.</li>
+                            <li data-translate-key="implication-2"><strong>Valida Nuestro Análisis:</strong> Confirma que nuestras proyecciones basadas en los precios de la web de Parking Callao son correctas.</li>
+                            <li data-translate-key="implication-3"><strong>Refuerza la Discrepancia de Precios:</strong> Demuestra que el vendedor está utilizando datos inflados del mismo parking que hemos analizado.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="precio-venta">
+                <h2 data-translate-key="price-title">2. Análisis Crítico del Precio de Venta</h2>
+                
+                <div class="price-alert-box">
+                    <h3><i class="fas fa-exclamation-triangle"></i> <span data-translate-key="price-alert-title">ALERTA DE SOBREVALORACIÓN EXTREMA</span></h3>
+                    <p data-translate-key="price-alert-text">El vendedor está ofreciendo el parking a un precio de <strong>75.000 € por plaza</strong>, lo que representa una prima del <strong>87.5%</strong> sobre el precio de mercado en la zona (aproximadamente 40.000 € por plaza).</p>
+                </div>
+                
+                <table class="price-comparison-table">
+                    <thead>
+                        <tr>
+                            <th data-translate-key="price-table-method">Método de Valoración</th>
+                            <th data-translate-key="price-table-price">Precio por Plaza (€)</th>
+                            <th data-translate-key="price-table-total">Valor Total Estimado (€)</th>
+                            <th data-translate-key="price-table-diff">Diferencia con Precio Vendedor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-translate-key="price-market">Precio de Mercado (Zona)</td>
+                            <td>40.000 €</td>
+                            <td>12.800.000 - 13.800.000 €</td>
+                            <td class="positive">-46.0% a -48.7%</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="price-our-valuation">Nuestra Valoración Ajustada</td>
+                            <td>45.000 - 55.000 €</td>
+                            <td>14.400.000 - 17.600.000 €</td>
+                            <td class="positive">-26.7% a -40.0%</td>
+                        </tr>
+                        <tr class="price-alert-highlight">
+                            <td><strong data-translate-key="price-seller">Precio del Vendedor</strong></td>
+                            <td><strong>75.000 €</strong></td>
+                            <td><strong>24.000.000 €</strong></td>
+                            <td><strong data-translate-key="price-reference">Referencia</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="chart-container">
+                    <h3 data-translate-key="comparison-title">Comparación Visual de Valoración por Plaza</h3>
+                    
+                    <div class="chart-bar">
+                        <div class="chart-label" data-translate-key="chart-market">Mercado:</div>
+                        <div class="chart-bar-fill our-data" style="width: 400px;">40.000 €/plaza</div>
+                    </div>
+                    
+                    <div class="chart-bar">
+                        <div class="chart-label" data-translate-key="chart-our-valuation">Nuestra Valoración:</div>
+                        <div class="chart-bar-fill seller-data" style="width: 500px;">45.000-55.000 €/plaza</div>
+                    </div>
+                    
+                    <div class="chart-bar">
+                        <div class="chart-label" data-translate-key="chart-seller">Vendedor:</div>
+                        <div class="chart-bar-fill discrepancy" style="width: 750px;">75.000 €/plaza</div>
+                    </div>
+                </div>
+                
+                <div class="logic-box">
+                    <h3 data-translate-key="price-impact-title">Impacto en la Viabilidad Financiera</h3>
+                    <p data-translate-key="price-impact-text">Esta sobrevaloración extrema tiene implicaciones directas en la viabilidad del proyecto:</p>
+                    
+                    <ul>
+                        <li data-translate-key="price-impact-1"><strong>Retorno de la Inversión:</strong> Al precio solicitado, el ROI se reduce drásticamente, extendiendo el período de recuperación a más de 25 años incluso con ocupaciones del 100%.</li>
+                        
+                        <li data-translate-key="price-impact-2"><strong>Punto de Equilibrio:</strong> Se requeriría una ocupación superior al 120% para alcanzar el break-even, lo que es matemáticamente imposible.</li>
+                        
+                        <li data-translate-key="price-impact-3"><strong>Valor de Reventa:</strong> En caso de necesidad de venta, existiría una pérdida potencial de 10-12 millones de euros.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="precios-servicio">
+                <h2 data-translate-key="service-price-title">3. Análisis de Precios de Servicio</h2>
+                
+                <div class="alert-box">
+                    <h3><i class="fas fa-exclamation-circle"></i> <span data-translate-key="service-discrepancy-title">DISCREPANCIA EN PRECIOS DE SERVICIO</span></h3>
+                    <p data-translate-key="service-discrepancy-text">Los precios de servicio propuestos por el vendedor están inflados en aproximadamente un <strong>30%</strong> en comparación con los precios reales observados en la web del parking.</p>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-translate-key="service-table-tariff">Tarifa</th>
+                            <th data-translate-key="service-table-real">Precio Web Real</th>
+                            <th data-translate-key="service-table-proposed">Precio Propuesto por Vendedor</th>
+                            <th data-translate-key="service-table-diff">Diferencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-translate-key="service-8h">8 horas</td>
+                            <td>18,80 €</td>
+                            <td>24,44 €</td>
+                            <td class="negative">+30%</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="service-12h">12 horas</td>
+                            <td>22,50 €</td>
+                            <td>29,25 €</td>
+                            <td class="negative">+30%</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="service-24h">24 horas</td>
+                            <td>28,00 €</td>
+                            <td>36,40 €</td>
+                            <td class="negative">+30%</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="service-month">Mes (residente)</td>
+                            <td>120,00 €</td>
+                            <td>156,00 €</td>
+                            <td class="negative">+30%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="image-reference">
+                    <h3 data-translate-key="screenshot-title">Captura de Pantalla de Precios Reales</h3>
+                    <p data-translate-key="screenshot-text">La interfaz de reserva muestra una tarifa de <strong>18,80 € por 8 horas</strong>, significativamente inferior a los 24,44 € utilizados en las proyecciones del vendedor.</p>
+                    <img src="https://z-cdn-media.chatglm.cn/files/2e72d867-1822-4b1a-81f1-2b36d3b85cc1.PNG?auth_key=1874264095-0509a709a0624b11b872a283f879d0ab-0-00c63784c4d45ad577e2b72c24ae2dbd" alt="Interfaz de reserva Parking Callao">
+                </div>
+                
+                <div class="logic-box">
+                    <h3 data-translate-key="service-impact-title">Impacto en los Proyectos Financieros</h3>
+                    <p data-translate-key="service-impact-text">Esta inflación de precios tiene consecuencias directas en las proyecciones de ingresos:</p>
+                    
+                    <ul>
+                        <li data-translate-key="service-impact-1"><strong>Ingresos Anuales Sobreestimados:</strong> Las proyecciones del vendedor podrían estar infladas en aproximadamente 300.000-400.000 € anuales.</li>
+                        
+                        <li data-translate-key="service-impact-2"><strong>EBITDA Inflado:</strong> El margen operativo sería significativamente menor al calculado con los precios reales.</li>
+                        
+                        <li data-translate-key="service-impact-3"><strong>Viabilidad Comprometida:</strong> Con los precios reales, la operación es aún menos viable que con las proyecciones originales.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="estructura-legal">
+                <h2 data-translate-key="legal-structure-title">4. Estructura Legal y Riesgos Asociados</h2>
+                
+                <div class="financial-risk-box">
+                    <h3><i class="fas fa-exclamation-triangle"></i> <span data-translate-key="legal-alerts-title">ALERTAS SOBRE ESTRUCTURA LEGAL</span></h3>
+                    <ul>
+                        <li data-translate-key="legal-alert-1"><strong>Sociedad con Único Activo:</strong> La tenedora del parking es una sociedad que no posee otros activos más allá de este parking.</li>
+                        <li data-translate-key="legal-alert-2"><strong>Sin Presentación de Cuentas:</strong> No ha presentado las cuentas en el Registro Mercantil durante los últimos dos años.</li>
+                        <li data-translate-key="legal-alert-3"><strong>Falta de Transparencia:</strong> No hay información financiera verificable disponible para el análisis.</li>
+                    </ul>
+                </div>
+                
+                <div class="specs-box">
+                    <h3 data-translate-key="legal-risks-title">Riesgos Específicos de la Estructura Legal</h3>
+                    <p data-translate-key="legal-risks-text">Esta estructura presenta varios riesgos significativos para el inversor:</p>
+                    
+                    <ul>
+                        <li data-translate-key="legal-risk-1"><strong>Riesgo de Pasivos Ocultos:</strong> Sin cuentas auditadas, no podemos verificar si la sociedad tiene deudas o pasivos no declarados.</li>
+                        
+                        <li data-translate-key="legal-risk-2"><strong>Dificultad de Due Diligence:</strong> La falta de información financiera dificulta enormemente la verificación de la salud financiera de la empresa.</li>
+                        
+                        <li data-translate-key="legal-risk-3"><strong>Riesgo Regulatorio:</strong> La falta de presentación de cuentas podría indicar problemas con las autoridades fiscales o regulatorias.</li>
+                        
+                        <li data-translate-key="legal-risk-4"><strong>Valoración del Activo:</strong> Sin estados financieros, es imposible verificar los ingresos históricos y la ocupación real del parking.</li>
+                    </ul>
+                </div>
+                
+                <div class="alert-box">
+                    <h3 data-translate-key="legal-recommendations-title">Recomendaciones de Mitigación de Riesgos</h3>
+                    <p data-translate-key="legal-recommendations-text">Antes de proceder con cualquier operación, se recomienda:</p>
+                    <ol>
+                        <li data-translate-key="legal-rec-1">Solicitar las cuentas de los últimos tres años y verificar su estado en el Registro Mercantil.</li>
+                        <li data-translate-key="legal-rec-2">Realizar una auditoría financiera exhaustiva de la sociedad vendedora.</li>
+                        <li data-translate-key="legal-rec-3">Verificar si existen cargas, embargos o limitaciones sobre el activo.</li>
+                        <li data-translate-key="legal-rec-4">Solicitar informes de solvencia de la sociedad vendedora.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="financiacion">
+                <h2 data-translate-key="financing-title">5. Estructura de Financiación Propuesta</h2>
+                
+                <table class="financial-structure-table">
+                    <thead>
+                        <tr>
+                            <th data-translate-key="financing-table-concept">Concepto</th>
+                            <th data-translate-key="financing-table-detail">Detalle</th>
+                            <th data-translate-key="financing-table-amount">Importe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-translate-key="financing-principal">Principal del Préstamo</td>
+                            <td data-translate-key="financing-principal-detail">100% del valor de compra</td>
+                            <td>24.000.000 €</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="financing-interest">Tipo de Interés (TIN)</td>
+                            <td data-translate-key="financing-interest-detail">Tasa fija</td>
+                            <td>4,5%</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="financing-term">Plazo Máximo</td>
+                            <td data-translate-key="financing-term-detail">Período de amortización</td>
+                            <td>15 años (180 meses)</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="financing-opening-fee">Comisión de Apertura</td>
+                            <td data-translate-key="financing-opening-fee-detail">Porcentaje sobre principal</td>
+                            <td>1,5% (360.000 €)</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="financing-study-fee">Comisión de Estudio</td>
+                            <td data-translate-key="financing-study-fee-detail">Porcentaje sobre principal</td>
+                            <td>0,5% (120.000 €)</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong data-translate-key="financing-monthly-payment">Cuota Mensual Aproximada</strong></td>
+                            <td data-translate-key="financing-monthly-payment-detail">Principal + intereses</td>
+                            <td><strong>199.660 €</strong></td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong data-translate-key="financing-annual-cost">Coste Anual de la Deuda</strong></td>
+                            <td data-translate-key="financing-annual-cost-detail">12 cuotas mensuales</td>
+                            <td><strong>2.395.920 €</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="logic-box">
+                    <h3 data-translate-key="financing-analysis-title">Análisis de la Estructura de Financiación</h3>
+                    <p data-translate-key="financing-analysis-text">La estructura de financiación propuesta presenta varios elementos que aumentan el coste total de la operación:</p>
+                    
+                    <ul>
+                        <li data-translate-key="financing-analysis-1"><strong>Comisiones Elevadas:</strong> Las comisiones de apertura (1,5%) y estudio (0,5%) suman 480.000 €, un 2% adicional sobre el principal.</li>
+                        
+                        <li data-translate-key="financing-analysis-2"><strong>Tipo de Interés Alto:</strong> Un 4,5% para un inmueble comercial en el mercado actual es relativamente alto, especialmente considerando los riesgos del activo.</li>
+                        
+                        <li data-translate-key="financing-analysis-3"><strong>Plazo Limitado:</strong> Un plazo de 15 años para un activo inmobiliario de este tipo es relativamente corto, resultando en cuotas mensuales elevadas.</li>
+                        
+                        <li data-translate-key="financing-analysis-4"><strong>Financiación al 100%:</strong> Aunque reduce la necesidad de capital inicial, aumenta significativamente el riesgo y el coste financiero total.</li>
+                    </ul>
+                </div>
+                
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <span data-translate-key="kpi-total-cost">Coste Total Financiero</span>
+                        <span class="kpi-value">42,7 M€</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span data-translate-key="kpi-total-interest">Total Intereses Pagados</span>
+                        <span class="kpi-value">18,7 M€</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span data-translate-key="kpi-debt-ratio">Ratio Deuda/Valor</span>
+                        <span class="kpi-value">177%</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="riesgo-cambio">
+                <h2 data-translate-key="currency-risk-title">6. Análisis de Riesgo de Cambio</h2>
+                
+                <div class="currency-risk-box">
+                    <h3><i class="fas fa-exchange-alt"></i> <span data-translate-key="currency-risk-alert-title">RIESGO CRÍTICO DE DIVISA</span></h3>
+                    <p data-translate-key="currency-risk-alert-text">La operación presenta un riesgo de cambio significativo debido a la asimetría monetaria:</p>
+                    <ul>
+                        <li data-translate-key="currency-risk-1"><strong>Financiación en USD:</strong> El préstamo se concede en dólares americanos.</li>
+                        <li data-translate-key="currency-risk-2"><strong>Ingresos en EUR:</strong> Todos los ingresos generados por el parking serán en euros.</li>
+                        <li data-translate-key="currency-risk-3"><strong>Pagos en USD:</strong> El servicio de la deuda debe pagarse en dólares.</li>
+                    </ul>
+                </div>
+                
+                <div class="chart-container">
+                    <h3 data-translate-key="currency-impact-title">Impacto del Riesgo de Cambio en el Coste de la Deuda</h3>
+                    
+                    <div class="chart-bar">
+                        <div class="chart-label" data-translate-key="currency-no-risk">Sin riesgo de cambio:</div>
+                        <div class="chart-bar-fill our-data" style="width: 239px;">2.395.920 €/año</div>
+                    </div>
+                    
+                    <div class="chart-bar">
+                        <div class="chart-label" data-translate-key="currency-10-percent">Con EUR/USD -10%:</div>
+                        <div class="chart-bar-fill seller-data" style="width: 263px;">2.635.512 €/año</div>
+                    </div>
+                    
+                    <div class="chart-bar">
+                        <div class="chart-label" data-translate-key="currency-20-percent">Con EUR/USD -20%:</div>
+                        <div class="chart-bar-fill discrepancy" style="width: 287px;">2.875.104 €/año</div>
+                    </div>
+                </div>
+                
+                <table class="currency-impact-table">
+                    <thead>
+                        <tr>
+                            <th data-translate-key="currency-table-scenario">Escenario Cambio EUR/USD</th>
+                            <th data-translate-key="currency-table-cost">Coste Anual Deuda (€)</th>
+                            <th data-translate-key="currency-table-increase">Incremento vs. Base</th>
+                            <th data-translate-key="currency-table-impact">Impacto en Viabilidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-translate-key="currency-current-rate">Tipo actual (1,08)</td>
+                            <td>2.395.920 €</td>
+                            <td>-</td>
+                            <td data-translate-key="currency-base">Base</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="currency-10-percent-fall">Caída 10% (0,97)</td>
+                            <td>2.635.512 €</td>
+                            <td class="negative">+239.592 €</td>
+                            <td class="negative" data-translate-key="currency-critical">Crítico</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="currency-20-percent-fall">Caída 20% (0,86)</td>
+                            <td>2.875.104 €</td>
+                            <td class="negative">+479.184 €</td>
+                            <td class="negative" data-translate-key="currency-unviable">Inviabilidad total</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="alert-box">
+                    <h3 data-translate-key="currency-strategies-title">Estrategias de Cobertura Cambiaria</h3>
+                    <p data-translate-key="currency-strategies-text">Para mitigar este riesgo, se recomienda:</p>
+                    <ul>
+                        <li data-translate-key="currency-strategy-1"><strong>FX Swap:</strong> Permuta de divisas para fijar el tipo de cambio durante toda la vida del préstamo. Coste estimado: 390.000-520.000 € anuales.</li>
+                        <li data-translate-key="currency-strategy-2"><strong>Collar Cambiario:</strong> Establece un rango de tipos (mínimo y máximo). Coste estimado: 195.000-260.000 € anuales.</li>
+                        <li data-translate-key="currency-strategy-3"><strong>Contratos Forward:</strong> Fija el tipo de cambio para pagos futuros. Coste estimado: 260.000-325.000 € anuales.</li>
+                    </ul>
+                </div>
+                
+                <div class="logic-box">
+                    <h3 data-translate-key="currency-coverage-impact-title">Impacto de la Cobertura en la Viabilidad</h3>
+                    <p data-translate-key="currency-coverage-impact-text">La inclusión del coste de cobertura afecta directamente al análisis de viabilidad:</p>
+                    
+                    <ul>
+                        <li data-translate-key="currency-coverage-impact-1"><strong>Aumento del Coste Financiero:</strong> La cobertura añade entre 195.000 y 520.000 € anuales al coste de la deuda.</li>
+                        <li data-translate-key="currency-coverage-impact-2"><strong>Punto de Equilibrio Elevado:</strong> Con cobertura, la ocupación necesaria para el break-even aumenta del 103% al 112-125%.</li>
+                        <li data-translate-key="currency-coverage-impact-3"><strong>Viabilidad Comprometida:</strong> El coste adicional de cobertura hace la operación completamente inviable bajo las condiciones actuales.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="sotratec">
+                <div class="sotratec-section">
+                    <div class="sotratec-header">
+                        <div class="sotratec-subtitle">SOTRATEC ENGINEERING & STRATEGIC CONSULTING</div>
+                        <h2 class="sotratec-title">Anexo II: Estudio de Mercado (n=100) y Presión Fiscal</h2>
+                        <p data-translate-key="sotratec-asset-info">Activo: <b>Aparcamiento Gran Vía 48</b> | Propietario: <b>Grupo Bolton</b></p>
+                    </div>
+
+                    <h2 data-translate-key="sotratec-sample-title">1. Distribución de la Muestra (n=100 Testigos)</h2>
+                    <p data-translate-key="sotratec-sample-text">SOTRATEC ha compilado 100 referencias de transacciones y ofertas activas en el distrito Centro (radio de 750m) para establecer la horquilla real de valor.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stats-card"><span data-translate-key="sotratec-market-average">Media Mercado</span><b>41.750 €</b></div>
+                        <div class="stats-card"><span data-translate-key="sotratec-min-detected">Mínimo Detectado</span><b>29.000 €</b></div>
+                        <div class="stats-card"><span data-translate-key="sotratec-max-detected">Máximo Detectado</span><b>58.000 €</b></div>
+                        <div class="stats-card highlight"><span data-translate-key="sotratec-bolton-offer">Oferta Bolton</span><b>75.000 €</b></div>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-translate-key="sotratec-analysis-ring">Anillo de Análisis</th>
+                                <th data-translate-key="sotratec-analysis-samples">Nº Muestras</th>
+                                <th data-translate-key="sotratec-analysis-range">Rango de Precio (€)</th>
+                                <th data-translate-key="sotratec-analysis-deviation">Desviación vs GV48</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-translate-key="sotratec-zone-0">Zona 0 (Gran Vía / Callao / Santo Domingo)</td>
+                                <td>25</td>
+                                <td>42.000 - 58.000</td>
+                                <td>-34%</td>
+                            </tr>
+                            <tr>
+                                <td data-translate-key="sotratec-zone-1">Zona 1 (San Bernardo / Fuencarral / Chueca)</td>
+                                <td>45</td>
+                                <td>35.000 - 45.000</td>
+                                <td>-52%</td>
+                            </tr>
+                            <tr>
+                                <td data-translate-key="sotratec-zone-2">Zona 2 (Justicia / Malasaña / Ópera)</td>
+                                <td>30</td>
+                                <td>29.000 - 38.000</td>
+                                <td>-65%</td>
+                            </tr>
+                            <tr class="row-outlier">
+                                <td data-translate-key="sotratec-analyzed-asset">ACTIVO ANALIZADO (Gran Vía 48)</td>
+                                <td>1</td>
+                                <td>75.000</td>
+                                <td>+87.5% s/ Media</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 data-translate-key="sotratec-fiscal-title">2. Análisis de Presión Fiscal y Valor Catastral</h2>
+                    <p data-translate-key="sotratec-fiscal-text">El desfase entre el valor de mercado pretendido por el vendedor y la valoración administrativa supone un riesgo de inspección fiscal (Comprobación de Valores).</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-translate-key="sotratec-fiscal-concept">Concepto Tributario</th>
+                                <th data-translate-key="sotratec-fiscal-sector">Media Sector (Centro)</th>
+                                <th data-translate-key="sotratec-fiscal-impact">Impacto Gran Vía 48</th>
+                                <th data-translate-key="sotratec-fiscal-anomaly">Anomalía Detectada</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b data-translate-key="sotratec-cadastral-value">Valor Catastral Promedio</b></td>
+                                <td>18.450 €</td>
+                                <td>20.100 € (Est.)</td>
+                                <td data-translate-key="sotratec-aligned">Alineado</td>
+                            </tr>
+                            <tr>
+                                <td><b data-translate-key="sotratec-ibi-annual">Recibo IBI Anual</b></td>
+                                <td>125 € - 140 €</td>
+                                <td>~158 €</td>
+                                <td data-translate-key="sotratec-moderate">Moderada (+15%)</td>
+                            </tr>
+                            <tr>
+                                <td><b data-translate-key="sotratec-price-cadastral-ratio">Ratio Precio/Valor Catastral</b></td>
+                                <td><b>2.2x</b></td>
+                                <td><b>3.73x</b></td>
+                                <td style="color:var(--danger); font-weight:bold;" data-translate-key="sotratec-high-fiscal-risk">RIESGO FISCAL ALTO</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="fiscal-warning">
+                        <b data-translate-key="sotratec-fiscal-verdict">Dictamen SOTRATEC:</b> <span data-translate-key="sotratec-fiscal-warning-text">La Administración Tributaria de la Comunidad de Madrid utiliza valores de referencia basados en transacciones medias de la zona. Realizar una compraventa de 75.000€/plaza sobre un activo con un valor catastral de ~20.000€ sitúa la operación en un percentil de "Riesgo Máximo de Auditoría", pudiendo derivar en una liquidación complementaria por el Impuesto de Transmisiones Patrimoniales (ITP).</span>
+                    </div>
+
+                    <h2 data-translate-key="sotratec-conclusion-title">3. Conclusión de la Auditoría</h2>
+                    <p data-translate-key="sotratec-conclusion-text">Tras analizar 100 referencias y la carga fiscal asociada, SOTRATEC concluye que la valoración del vendedor es <b>especulativa</b>:</p>
+                    <ul>
+                        <li data-translate-key="sotratec-conclusion-1">El precio no responde a la realidad física de las plazas (limitación de peso y altura).</li>
+                        <li data-translate-key="sotratec-conclusion-2">El valor pretendido supera en 17.000 € al testigo más caro de toda la Gran Vía (58.000 €).</li>
+                        <li data-translate-key="sotratec-conclusion-3">La estructura de la sociedad bajo <b>Grupo Bolton</b> con cuentas no presentadas sugiere una gestión administrativa deficiente que no justifica la prima de precio solicitada.</li>
+                    </ul>
+
+                    <div class="footer-note">
+                        <span data-translate-key="sotratec-footer-note">Este documento es un anexo técnico propiedad de SOTRATEC para uso exclusivo en la negociación del activo GV48.</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="discordancia-tecnica">
+                <div class="sotratec-report">
+                    <div class="sotratec-report-header">
+                        <div class="sotratec-logo">SOTRATEC AUDIT SERVICES</div>
+                        <h2 data-translate-key="technical-report-title">Informe de Discordancia Técnica Operativa</h2>
+                        <p data-translate-key="technical-report-subtitle">Proyecto: <b>Parking Callao - Gran Vía 48</b></p>
+                    </div>
+
+                    <h2 data-translate-key="technical-comparison-title">1. Comparativa de Dimensiones y Capacidades</h2>
+                    <p data-translate-key="technical-comparison-text">SOTRATEC presenta la comparativa directa entre los datos del <i>Dossier de Inversión</i> y los datos operativos reales publicados en la plataforma de reservas oficial.</p>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th data-translate-key="technical-table-parameter">Parámetro Técnico</th>
+                                <th class="source-dossier" data-translate-key="technical-table-dossier">Dossier Vendedor (Teórico)</th>
+                                <th class="source-public" data-translate-key="technical-table-real">Web Oficial Reservas (Real)</th>
+                                <th data-translate-key="technical-table-status">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b data-translate-key="technical-max-weight">Peso Máximo</b></td>
+                                <td data-translate-key="technical-max-weight-dossier">Hasta 2.500 kg</td>
+                                <td><b data-translate-key="technical-max-weight-real">2.000 kg</b></td>
+                                <td><span class="alert-badge" data-translate-key="technical-status-falsified">ADULTERADO</span></td>
+                            </tr>
+                            <tr>
+                                <td><b data-translate-key="technical-max-height">Altura Gálibo</b></td>
+                                <td data-translate-key="technical-max-height-dossier">"Apto para Vans/SUVs"</td>
+                                <td><b data-translate-key="technical-max-height-real">1,80 metros</b></td>
+                                <td><span class="alert-badge" data-translate-key="technical-status-restricted">RESTRINGIDO</span></td>
+                            </tr>
+                            <tr>
+                                <td><b data-translate-key="technical-max-length">Longitud Máxima</b></td>
+                                <td data-translate-key="technical-max-length-dossier">"Cualquier Berlina"</td>
+                                <td><b data-translate-key="technical-max-length-real">5,00 metros</b></td>
+                                <td><span class="alert-badge" data-translate-key="technical-status-incompatible">INCOMPATIBLE</span></td>
+                            </tr>
+                            <tr>
+                                <td><b data-translate-key="technical-ground-clearance">Distancia al Suelo</b></td>
+                                <td data-translate-key="technical-ground-clearance-dossier">No especificado</td>
+                                <td><b data-translate-key="technical-ground-clearance-real">10 cm (Mínimo)</b></td>
+                                <td><span class="alert-badge" data-translate-key="technical-status-critical">CRÍTICO</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="evidence-box-sotratec">
+                        <h2 data-translate-key="technical-evidence-title">2. Evidencia de Fuente Pública (Fe de Realidad)</h2>
+                        <p data-translate-key="technical-evidence-text">Para garantizar la transparencia de esta auditoría, SOTRATEC adjunta el acceso directo a la fuente de datos técnicos de explotación actual. Estos datos son los que vinculan legalmente al parking con el usuario final:</p>
+                        
+                        <div class="web-capture-sim">
+                            <b data-translate-key="technical-source-title">FUENTE: MISPARKINGS.COM - FICHA TÉCNICA CALLAO</b><br>
+                            ------------------------------------------------<br>
+                            <span data-translate-key="technical-source-accepted-vehicles">> Vehículos aceptados: Solo Turismos estándar.</span><br>
+                            <span data-translate-key="technical-source-max-dimensions">> Medidas Máximas: 5.00m largo | 1.80m alto | 2.10m ancho.</span><br>
+                            <span data-translate-key="technical-source-max-weight">> Peso Máximo: 2.000 kg.</span><br>
+                            <span data-translate-key="technical-source-note">> Nota: Prohibido vehículos con altura al suelo < 10cm.</span><br>
+                            ------------------------------------------------
+                        </div>
+                        
+                        <p data-translate-key="technical-verify-text">Puede verificar la veracidad de estos límites técnicos en el siguiente enlace oficial:</p>
+                        <a href="https://www.misparkings.com/parking-madrid/parking-callao" class="btn-link" target="_blank" data-translate-key="technical-verify-link">🔗 Ver Datos Públicos en MisParkings.com</a>
+                    </div>
+
+                    <h2 style="color:var(--sotratec-blue);" data-translate-key="technical-verdict-title">3. Dictamen de Ingeniería</h2>
+                    <p data-translate-key="technical-verdict-text">La discrepancia detectada invalida el modelo de negocio "Luxury" del dossier. Un sistema limitado a <b>2.000kg y 5 metros</b> excluye a los principales activos del segmento premium actual (Tesla Model X, Mercedes EQ-Series, Audi e-tron y Range Rover), reduciendo el valor patrimonial del activo de forma drástica.</p>
+                </div>
+            </section>
+
+            <section id="recalculo-financiero">
+                <div class="sotratec-report">
+                    <div class="sotratec-report-header">
+                        <h2 data-translate-key="recalculation-report-title">INFORME DE CORRECCIÓN DE FLUJOS DE CAJA</h2>
+                        <p data-translate-key="recalculation-report-subtitle">Activo: <b>Gran Vía 48</b> | Basado en datos operativos de <i>misparkings.com</i></p>
+                    </div>
+
+                    <h2 data-translate-key="recalculation-parameters-title">1. Ajuste de Parámetros de Explotación</h2>
+                    <p data-translate-key="recalculation-parameters-text">SOTRATEC ha recalculado la capacidad de generación de ingresos eliminando las proyecciones teóricas y aplicando los precios de venta reales al público.</p>
+                    
+                    <table class="table-recalc">
+                        <thead>
+                            <tr>
+                                <th data-translate-key="recalculation-table-concept">Concepto</th>
+                                <th data-translate-key="recalculation-table-dossier">Dossier Vendedor</th>
+                                <th data-translate-key="recalculation-table-reality">Realidad SOTRATEC</th>
+                                <th data-translate-key="recalculation-table-deviation">Desviación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-translate-key="recalculation-hourly-price">Precio/Hora (IVA incl.)</td>
+                                <td>4,50 €</td>
+                                <td class="highlight-red">2,35 €</td>
+                                <td>-47,7%</td>
+                            </tr>
+                            <tr>
+                                <td data-translate-key="recalculation-occupancy">Ocupación Media</td>
+                                <td>85%</td>
+                                <td class="highlight-red">62%*</td>
+                                <td>-23,0%</td>
+                            </tr>
+                            <tr>
+                                <td data-translate-key="recalculation-monthly-income">Ingreso Mensual/Plaza</td>
+                                <td>~800 €</td>
+                                <td class="highlight-red">299 €</td>
+                                <td>-62,6%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><small data-translate-key="recalculation-note">*Ajuste por ineficiencia técnica y tiempos de espera de 45 min publicados.</small></p>
+
+                    <h2 data-translate-key="recalculation-valuation-title">2. Valoración de Activo por Yield Real</h2>
+                    <p data-translate-key="recalculation-valuation-text">Bajo un escenario de explotación realista, el EBITDA se contrae significativamente, situando el valor del activo en niveles de mercado secundarios.</p>
+                    
+                    <div class="final-value">
+                        <span data-translate-key="recalculation-max-valuation">VALORACIÓN MÁXIMA RECOMENDADA SOTRATEC</span>
+                        <h2>12.150.000 €</h2>
+                        <p data-translate-key="recalculation-difference">Diferencia vs. Pretensión Vendedor: <b>-11.850.000 €</b></p>
+                    </div>
+
+                    <h2 data-translate-key="recalculation-conclusion-title">3. Conclusión de la Auditoría</h2>
+                    <p data-translate-key="recalculation-conclusion-text">La pretensión de venta de 24M € se basa en un <b>modelo de negocio inexistente</b>. Ni el robot admite los vehículos necesarios para cobrar 4,50 €/h, ni la demanda actual valida ese precio. SOTRATEC desaconseja la compra por encima de los 12,5M €, considerando el riesgo de mantenimiento y la situación irregular del Registro Mercantil.</p>
+                </div>
+            </section>
+
+            <!-- NUEVA SECCIÓN: Normalización de Gastos -->
+            <section id="normalizacion-gastos" class="expense-normalization-section">
+                <h2 data-translate-key="normalization-title">10. Auditoría de Cuenta de Explotación (Normalización)</h2>
+                <p data-translate-key="normalization-text">SOTRATEC ha analizado los gastos operativos (555.000 €/año) facilitados. Se detecta una infravaloración de costes estructurales para un sistema robotizado de alta intensidad.</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-translate-key="normalization-table-concept">Partida</th>
+                            <th data-translate-key="normalization-table-declared">Declarado</th>
+                            <th data-translate-key="normalization-table-adjustment">Ajuste SOTRATEC</th>
+                            <th data-translate-key="normalization-table-note">Nota Técnica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-translate-key="normalization-maintenance">Mantenimiento</td>
+                            <td>140.000 €</td>
+                            <td style="color:var(--danger);">200.000 €</td>
+                            <td data-translate-key="normalization-maintenance-note">Incluye provisión CAPEX por obsolescencia.</td>
+                        </tr>
+                        <tr>
+                            <td data-translate-key="normalization-personnel">Personal/Gerencia</td>
+                            <td>160.000 €</td>
+                            <td style="color:var(--danger);">220.000 €</td>
+                            <td data-translate-key="normalization-personnel-note">Refuerzo necesario por colas de 45 min.</td>
+                        </tr>
+                        <tr style="background:#f9f9f9; font-weight:bold;">
+                            <td data-translate-key="normalization-ebitda">EBITDA RESULTANTE</td>
+                            <td style="color:var(--success);">2.517.400 €</td>
+                            <td style="color:var(--danger);">965.000 €*</td>
+                            <td data-translate-key="normalization-ebitda-note">*Basado en ingresos reales de 2,35€/h.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="expense-conclusion">
+                    <b data-translate-key="normalization-conclusion-title">CONCLUSIÓN:</b> <span data-translate-key="normalization-conclusion-text">La valoración de 24.000.000 € implicaría pagar un múltiplo de <b>x24.8 sobre el EBITDA Real</b>, lo cual está totalmente fuera de los parámetros de inversión para activos de infraestructura robotizada.</span>
+                </div>
+            </section>
+
+            <!-- NUEVA SECCIÓN: Análisis de Valoración -->
+            <section id="analisis-valoracion" class="valuation-analysis-section">
+                <h2 data-translate-key="valuation-title">11. Análisis Crítico de la Valoración por Capitalización (Cap Rate)</h2>
+                
+                <p data-translate-key="valuation-text">El Grupo Bolton propone una valoración de <b>24.000.000 €</b> basada en un Cap Rate del 4,5%. SOTRATEC identifica una desviación metodológica grave al tratar un negocio industrial robotizado como una renta inmobiliaria pasiva.</p>
+
+                <div class="valuation-scenarios">
+                    <div class="valuation-scenario bolton">
+                        <h4 data-translate-key="valuation-bolton-title">Escenario Bolton (Teórico)</h4>
+                        <ul>
+                            <li data-translate-key="valuation-bolton-ebitda">EBITDA Proyectado: 2.517.400 €</li>
+                            <li data-translate-key="valuation-bolton-cap-rate">Cap Rate Aplicado: 4,5%</li>
+                            <li style="margin-top:10px;"><b data-translate-key="valuation-bolton-valuation">Valoración S/Dossier: > 50.000.000 €</b></li>
+                            <li style="color:#d32f2f;"><i data-translate-key="valuation-bolton-note">*Consideran 24M € como "Oportunidad".</i></li>
+                        </ul>
+                    </div>
+                    <div class="valuation-scenario sotratec">
+                        <h4 data-translate-key="valuation-sotratec-title">Escenario SOTRATEC (Auditado)</h4>
+                        <ul>
+                            <li data-translate-key="valuation-sotratec-ebitda">EBITDA Realizado: 965.000 €</li>
+                            <li data-translate-key="valuation-sotratec-cap-rate">Cap Rate de Mercado: 8,0%</li>
+                            <li style="margin-top:10px;"><b data-translate-key="valuation-sotratec-valuation">Valoración Técnica: 12.062.500 €</b></li>
+                            <li style="color:#2e7d32;"><i data-translate-key="valuation-sotratec-note">*Precio objetivo para inversión viable.</i></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="valuation-verdict">
+                    <b data-translate-key="valuation-verdict-title">DICTAMEN FINAL:</b> <span data-translate-key="valuation-verdict-text">La capitalización al 4,5% es improcedente para un activo con <b>esperas de 45 minutos</b> y <b>limitación de carga a 2.000kg</b>. El riesgo de interrupción de flujo por fallo de software o necesidad de renovación mecánica obliga a una tasa de descuento mínima del 8,0%.</span>
+                </div>
+            </section>
+
+            <section id="resolucion">
+                <h2 data-translate-key="resolution-title">12. Resolución Final y Recomendaciones</h2>
+                
+                <div class="resolution-box">
+                    <h3><i class="fas fa-gavel"></i> <span data-translate-key="resolution-conclusion-title">CONCLUSIÓN: OPERACIÓN COMPLETAMENTE INVÁBILE</span></h3>
+                    <p data-translate-key="resolution-conclusion-text">Tras el análisis exhaustivo de todos los factores críticos, incluyendo los tres informes independientes de SOTRATEC, nuestra recomendación es <strong>ABANDONAR DEFINITIVAMENTE</strong> esta operación por las siguientes razones demoledoras:</p>
+                    
+                    <div class="risk-meter">
+                        <div class="risk-meter-fill"></div>
+                        <div class="risk-meter-label" data-translate-key="risk-level-label">Nivel de Riesgo: 99%</div>
+                    </div>
+                    
+                    <ol class="action-steps">
+                        <li data-translate-key="resolution-reason-1"><strong>Sobrevaloración Extrema (97.6%):</strong> El precio solicitado (75.000 €/plaza) supera en 11.850.000 € la valoración máxima recomendada por SOTRATEC (12.150.000 €) basada en los datos operativos reales.</li>
+                        
+                        <li data-translate-key="resolution-reason-2"><strong>Datos Técnicos Falsificados:</strong> El informe de discordancia técnica demuestra que el vendedor ha adulterado las especificaciones del parking, declarando 2.500 kg de peso máximo cuando la realidad es de 2.000 kg.</li>
+                        
+                        <li data-translate-key="resolution-reason-3"><strong>Ingresos Sobreestimados (62.6%):</strong> El recálculo financiero muestra que el ingreso mensual real por plaza es de 299 €, no los 800 € proyectados por el vendedor.</li>
+                        
+                        <li data-translate-key="resolution-reason-4"><strong>Precios Inflados (47.7%):</strong> El precio real por hora es de 2,35 €, casi la mitad de los 4,50 € utilizados en las proyecciones del vendedor.</li>
+                        
+                        <li data-translate-key="resolution-reason-5"><strong>Riesgo Fiscal Crítico:</strong> El ratio Precio/Valor Catastral de 3.73x sitúa la operación en un "Riesgo Máximo de Auditoría" con posible liquidación complementaria por ITP.</li>
+                        
+                        <li data-translate-key="resolution-reason-6"><strong>Riesgo de Cambio Crítico:</strong> La asimetría monetaria (financiación en USD, ingresos en EUR) añade un riesgo significativo y costes de cobertura elevados.</li>
+                        
+                        <li data-translate-key="resolution-reason-7"><strong>Estructura Legal Opaca:</strong> La falta de presentación de cuentas y la opacidad financiera de la sociedad vendedora representa un riesgo inaceptable.</li>
+                    </ol>
+                    
+                    <h3 data-translate-key="sotratec-final-verdict-title">Dictamen Final SOTRATEC</h3>
+                    <p data-translate-key="sotratec-final-verdict-text">La pretensión de venta de 24M € se basa en un <b>modelo de negocio inexistente</b>. Ni el robot admite los vehículos necesarios para el segmento premium, ni la demanda actual valida los precios proyectados. SOTRATEC desaconseja la compra por encima de los 12,5M €.</p>
+                    
+                    <h3 data-translate-key="alternative-strategy-title">Estrategia Alternativa</h3>
+                    <p data-translate-key="alternative-strategy-text">Si se desea reconsiderar la operación, se deberían cumplir <strong>TODAS</strong> las siguientes condiciones:</p>
+                    
+                    <ul>
+                        <li data-translate-key="alternative-strategy-1"><strong>Reducción Extrema del Precio:</strong> Negociar hasta un máximo de 12.000.000-12.500.000 €, en línea con la valoración de SOTRATEC basada en datos operativos reales.</li>
+                        <li data-translate-key="alternative-strategy-2"><strong>Transparencia Absoluta:</strong> Presentación de todas las cuentas y estados financieros de los últimos 3 años.</li>
+                        <li data-translate-key="alternative-strategy-3"><strong>Due Diligence Completa:</strong> Verificación de todos los aspectos legales, fiscales y técnicos del activo.</li>
+                        <li data-translate-key="alternative-strategy-4"><strong>Mejora de Condiciones Financieras:</strong> Reducción del tipo de interés al 3.5-4.0%, eliminación de comisiones y extensión del plazo a 25-30 años.</li>
+                        <li data-translate-key="alternative-strategy-5"><strong>Cobertura de Riesgo de Cambio:</strong> Acuerdo con el vendedor para compartir el coste de cobertura cambiaria durante los primeros 5 años.</li>
+                    </ul>
+                    
+                    <div class="alert-box">
+                        <h3 data-translate-key="final-recommendation-title">Recomendación Final</h3>
+                        <p data-translate-key="final-recommendation-text">Dada la confluencia de múltiples factores de riesgo, la sobrevaloración extrema del activo confirmada por tres informes independientes de SOTRATEC, la falsificación de datos técnicos y el riesgo fiscal significativo, recomendamos <strong>abandonar definitivamente esta operación</strong> y buscar oportunidades con mayor transparencia y viabilidad real.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contraoferta" class="loi-section">
+                <h2 data-translate-key="loi-title">13. Carta de Intenciones y Contraoferta</h2>
+                
+                <button class="print-button" onclick="printLOI()">
+                    <i class="fas fa-print"></i> <span data-translate-key="print-loi-button">Imprimir Documento de Contraoferta</span>
+                </button>
+                
+                <div class="loi-container" id="loiDocument">
+                    <table class="header-table">
+                        <tr>
+                            <td>
+                                <b style="font-size: 1.4em; color: var(--sotratec-blue);">SOTRATEC</b><br>
+                                <small data-translate-key="sotratec-subtitle">Engineering & Corporate Strategy</small>
+                            </td>
+                            <td class="confidential"><span data-translate-key="confidential-text">Estrictamente Confidencial<br>Sujeto a Due Diligence</span></td>
+                        </tr>
+                    </table>
+
+                    <p style="text-align: right;"><span data-translate-key="madrid-date">Madrid</span>, <span id="currentDate"></span></p>
+
+                    <p><b data-translate-key="attention-to">A la atención del Responsable de Activos Inmobiliarios / Dirección Financiera</b><br>
+                    <b data-translate-key="bolton-spain">GRUPO BOLTON (España)</b></p>
+
+                    <h1 class="loi-title" data-translate-key="loi-main-title">Carta de Intenciones y Oferta No Vinculante (NBO)</h1>
+
+                    <div class="ref-box">
+                        <b data-translate-key="loi-asset">Activo:</b> <span data-translate-key="loi-asset-detail">Explotación de Aparcamiento Robotizado Gran Vía 48 (Madrid).</span><br>
+                        <b data-translate-key="loi-structure">Estructura:</b> <span data-translate-key="loi-structure-detail">Adquisición del 100% de las participaciones sociales de la SPV titular.</span><br>
+                        <b data-translate-key="loi-reference">Referencia:</b> ST-GV48-2026-NBO
+                    </div>
+
+                    <p data-translate-key="loi-intro-text">Tras la exhaustiva auditoría técnica y financiera realizada por <b>SOTRATEC</b> sobre el expediente facilitado y el contraste con los datos operativos públicos (misparkings.com), presentamos la siguiente contraoferta formal:</p>
+
+                    <span class="point-title" data-translate-key="loi-valuation-title">1. VALORACIÓN DE COMPRAVENTA</span>
+                    <p data-translate-key="loi-valuation-text">Atendiendo al flujo de caja real derivado de una tarifa media de <b>2,35 €/h</b> y las limitaciones técnicas certificadas del sistema <i>WÖHR Parksafe 582</i> (Límite 2.000 kg / 5,00 m), fijamos el valor de adquisición en:</p>
+
+                    <div class="value-box">
+                        <span data-translate-key="loi-total-price">PRECIO TOTAL DE ADQUISICIÓN (Equity Value)</span><br>
+                        <b>12.150.000 €</b><br>
+                        <small data-translate-key="loi-total-price-text">(Doce millones ciento cincuenta mil euros)</small>
+                    </div>
+
+                    <span class="point-title" data-translate-key="loi-conditions-title">2. CONDICIONES SUSPENSIVAS (CONDICIONES "SINE QUA NON")</span>
+                    <p data-translate-key="loi-conditions-text">La presente oferta queda estrictamente sujeta al cumplimiento de los siguientes hitos por parte del Vendedor:</p>
+                    <ul>
+                        <li data-translate-key="loi-condition-1"><b>Regularización Mercantil:</b> <span data-translate-key="loi-condition-1-detail">Levantamiento del cierre de la hoja registral mediante el depósito de las Cuentas Anuales de los ejercicios 2024 y 2025.</span></li>
+                        <li data-translate-key="loi-condition-2"><b>Certificación Técnica:</b> <span data-translate-key="loi-condition-2-detail">Entrega del libro de mantenimiento firmado por el fabricante original (WÖHR) y última acta de inspección OCA sin deficiencias graves.</span></li>
+                        <li data-translate-key="loi-condition-3"><b>Prueba de Carga:</b> <span data-translate-key="loi-condition-3-detail">Verificación presencial de los tiempos de entrega de vehículos (Cycle Times) para descartar obsolescencia mecánica.</span></li>
+                    </ul>
+
+                    <span class="point-title" data-translate-key="loi-justification-title">3. JUSTIFICACIÓN DE LA OFERTA</span>
+                    <p data-translate-key="loi-justification-text">Nuestra valoración se basa en una muestra estadística de <b>100 testigos</b> en el eje Gran Vía, donde la media de mercado se sitúa en 41.750 €/plaza. La pretensión inicial de 75.000 €/plaza carece de soporte técnico dado que el activo es incompatible con el 90% del segmento de vehículos eléctricos de lujo (EV) actuales debido a restricciones de peso nominal.</p>
+
+                    <p data-translate-key="loi-validity-text">Esta oferta tiene una validez de 15 días naturales a partir de la fecha de emisión.</p>
+
+                    <div class="signature-grid">
+                        <div class="sig-line">
+                            <b>SOTRATEC AUDIT SERVICES</b><br>
+                            <span data-translate-key="loi-investor-director">Fdo: Director de Inversiones</span>
+                        </div>
+                        <div class="sig-line">
+                            <b data-translate-key="loi-acceptance-bolton">ACEPTACIÓN GRUPO BOLTON</b><br>
+                            <span data-translate-key="loi-signature">Sello y Firma</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="disclaimer">
+                <strong data-translate-key="disclaimer-title">Aviso Legal:</strong> <span data-translate-key="disclaimer-text">Este análisis se basa en la información disponible y está sujeto a verificación. No constituye una recomendación de inversión definitiva. Se aconseja la consulta con asesores financieros, legales e inmobiliarios especializados antes de tomar cualquier decisión.</span>
+            </div>
+        </main>
+    </div>
+
+    <div class="floating-action" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <footer>
+        © 2026 Propfastinvest Group Ltd.
+    </footer>
+
+    <script>
+        // Función para establecer la fecha actual en el documento LOI
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateElement = document.getElementById('currentDate');
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            dateElement.textContent = today.toLocaleDateString('es-ES', options);
+        });
+
+        // Función para imprimir solo el documento LOI
+        function printLOI() {
+            const loiContent = document.getElementById('loiDocument').innerHTML;
+            const originalContent = document.body.innerHTML;
+            
+            // Crear una nueva ventana para imprimir
+            const printWindow = window.open('', '_blank');
+            
+            // Escribir el contenido del documento LOI en la nueva ventana
+            printWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="es">
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Carta de Intenciones y Contraoferta</title>
+                    <style>
+                        body { font-family: 'Times New Roman', serif; line-height: 1.5; color: #333; }
+                        .header-table { width: 100%; border-bottom: 2px solid #003366; margin-bottom: 30px; }
+                        .confidential { color: #b71c1c; font-weight: bold; text-transform: uppercase; font-size: 0.9em; text-align: right; }
+                        h1 { color: #003366; font-size: 1.6em; text-align: center; text-transform: uppercase; margin-top: 0; }
+                        .ref-box { background: #f9f9f9; padding: 15px; border: 1px solid #eee; margin: 20px 0; font-size: 0.9em; }
+                        .point-title { font-weight: bold; text-decoration: underline; color: #003366; display: block; margin-top: 20px; }
+                        .value-box { text-align: center; border: 2px double #003366; padding: 20px; margin: 30px 0; background: #f0f4f8; }
+                        .value-box b { font-size: 1.8em; color: #003366; }
+                        .signature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; }
+                        .sig-line { border-top: 1px solid #333; padding-top: 10px; text-align: center; font-size: 0.8em; }
+                        @media print { .no-print { display: none; } }
+                    </style>
+                </head>
+                <body>
+                    ${loiContent}
+                </body>
+                </html>
+            `);
+            
+            // Cerrar el documento para asegurar que todo el contenido se haya cargado
+            printWindow.document.close();
+            
+            // Esperar un momento antes de imprimir para asegurar que el contenido se haya cargado completamente
+            setTimeout(() => {
+                printWindow.print();
+                printWindow.close();
+            }, 500);
+        }
+
+        const translations = {
+            en: {
+                "page-title": "Critical Analysis - Callao Parking (Gran Vía 48 / Tudescos)",
+                "main-title": "Critical Viability Analysis",
+                "asset-info": "<strong>Asset:</strong> Callao Parking (Gran Vía 48 / Tudescos)",
+                "nav-1": "1. Description",
+                "nav-2": "2. Sale Price",
+                "nav-3": "3. Service Prices",
+                "nav-4": "4. Legal Structure",
+                "nav-5": "5. Financing",
+                "nav-6": "6. Exchange Risk",
+                "nav-7": "7. Market Analysis",
+                "nav-8": "8. Technical Discrepancy",
+                "nav-9": "9. Financial Recalculation",
+                "nav-10": "10. Expense Normalization",
+                "nav-11": "11. Valuation Analysis",
+                "nav-12": "12. Final Resolution",
+                "nav-13": "13. Counteroffer",
+                "desc-title": "1. Asset Description",
+                "location-label": "Location",
+                "location-value": "Gran Vía 48 / Calle Tudescos 1-3, Madrid",
+                "cadastre-label": "Cadastral Reference",
+                "cadastre-value": "1207505VK4710G0001YW",
+                "capacity-label": "Capacity",
+                "capacity-value": "320-345 Robotic Spaces",
+                "confirmation-title": "Location Confirmation: Callao Parking",
+                "confirmation-text": "We confirm that Gran Vía 48 and Calle Tudescos 1-3 correspond to the same parking, commercially known as <strong>Callao Parking</strong>. It is a corner building with different accesses depending on the facade.",
+                "evidence-title": "Visual Evidence: Parking Confirmation",
+                "evidence-text": "The following image visually confirms that it is the same parking, showing the main entrance with the 'PARKING CALLAO' branding and the slogan 'THE MOST SPECTACULAR ROBOTIZED PARKING IN MADRID':",
+                "image-caption": "Main entrance of Callao Parking on Gran Vía 48, confirming that it is the same asset referenced in the seller's documents.",
+                "implications-title": "Implications of this Confirmation",
+                "implications-text": "This visual evidence is crucial because:",
+                "implication-1": "<strong>Confirms Asset Identity:</strong> Eliminates any doubt about whether we were analyzing the correct parking.",
+                "implication-2": "<strong>Validates Our Analysis:</strong> Confirms that our projections based on Callao Parking's web prices are correct.",
+                "implication-3": "<strong>Reinforces Price Discrepancy:</strong> Demonstrates that the seller is using inflated data from the same parking we have analyzed.",
+                "price-title": "2. Critical Sale Price Analysis",
+                "price-alert-title": "EXTREME OVERVALUATION ALERT",
+                "price-alert-text": "The seller is offering the parking at a price of <strong>75,000 € per space</strong>, representing a premium of <strong>87.5%</strong> over the market price in the area (approximately 40,000 € per space).",
+                "price-table-method": "Valuation Method",
+                "price-table-price": "Price per Space (€)",
+                "price-table-total": "Estimated Total Value (€)",
+                "price-table-diff": "Difference vs Seller Price",
+                "price-market": "Market Price (Area)",
+                "price-our-valuation": "Our Adjusted Valuation",
+                "price-seller": "Seller Price",
+                "price-reference": "Reference",
+                "price-impact-title": "Impact on Financial Viability",
+                "price-impact-text": "This extreme overvaluation has direct implications on the project's viability:",
+                "price-impact-1": "<strong>Return on Investment:</strong> At the requested price, ROI is drastically reduced, extending the payback period to over 25 years even with 100% occupancy.",
+                "price-impact-2": "<strong>Break-even Point:</strong> An occupancy above 120% would be required to reach break-even, which is mathematically impossible.",
+                "price-impact-3": "<strong>Resale Value:</strong> In case of need to sell, there would be a potential loss of 10-12 million euros.",
+                "comparison-title": "Visual Comparison of Valuation per Space",
+                "chart-market": "Market:",
+                "chart-our-valuation": "Our Valuation:",
+                "chart-seller": "Seller:",
+                "service-price-title": "3. Service Price Analysis",
+                "service-discrepancy-title": "SERVICE PRICE DISCREPANCY",
+                "service-discrepancy-text": "The service prices proposed by the seller are inflated by approximately <strong>30%</strong> compared to the real prices observed on the parking's website.",
+                "service-table-tariff": "Tariff",
+                "service-table-real": "Real Web Price",
+                "service-table-proposed": "Seller's Proposed Price",
+                "service-table-diff": "Difference",
+                "service-8h": "8 hours",
+                "service-12h": "12 hours",
+                "service-24h": "24 hours",
+                "service-month": "Month (resident)",
+                "screenshot-title": "Real Prices Screenshot",
+                "screenshot-text": "The booking interface shows a rate of <strong>18,80 € for 8 hours</strong>, significantly lower than the 24,44 € used in the seller's projections.",
+                "service-impact-title": "Impact on Financial Projections",
+                "service-impact-text": "This price inflation has direct consequences on revenue projections:",
+                "service-impact-1": "<strong>Overestimated Annual Revenues:</strong> The seller's projections could be inflated by approximately 300,000-400,000 € annually.",
+                "service-impact-2": "<strong>Inflated EBITDA:</strong> The operating margin would be significantly lower than calculated with real prices.",
+                "service-impact-3": "<strong>Compromised Viability:</strong> With real prices, the operation is even less viable than with the original projections.",
+                "legal-structure-title": "4. Legal Structure and Associated Risks",
+                "legal-alerts-title": "LEGAL STRUCTURE ALERTS",
+                "legal-alert-1": "<strong>Single Asset Company:</strong> The parking's holding company is a company that owns no other assets beyond this parking.",
+                "legal-alert-2": "<strong>No Accounts Filed:</strong> Has not filed accounts in the Commercial Registry for the last two years.",
+                "legal-alert-3": "<strong>Lack of Transparency:</strong> No verifiable financial information is available for analysis.",
+                "legal-risks-title": "Specific Risks of the Legal Structure",
+                "legal-risks-text": "This structure presents several significant risks for the investor:",
+                "legal-risk-1": "<strong>Hidden Liabilities Risk:</strong> Without audited accounts, we cannot verify if the company has debts or undeclared liabilities.",
+                "legal-risk-2": "<strong>Due Diligence Difficulty:</strong> Lack of financial information makes it extremely difficult to verify the company's financial health.",
+                "legal-risk-3": "<strong>Regulatory Risk:</strong> Failure to file accounts may indicate problems with tax or regulatory authorities.",
+                "legal-risk-4": "<strong>Asset Valuation:</strong> Without financial statements, it is impossible to verify historical revenues and actual parking occupancy.",
+                "legal-recommendations-title": "Risk Mitigation Recommendations",
+                "legal-recommendations-text": "Before proceeding with any transaction, the following is recommended:",
+                "legal-rec-1": "Request the last three years' accounts and verify their status in the Commercial Registry.",
+                "legal-rec-2": "Conduct a comprehensive financial audit of the selling company.",
+                "legal-rec-3": "Verify if there are liens, embargoes, or limitations on the asset.",
+                "legal-rec-4": "Request solvency reports from the selling company.",
+                "financing-title": "5. Proposed Financing Structure",
+                "financing-table-concept": "Concept",
+                "financing-table-detail": "Detail",
+                "financing-table-amount": "Amount",
+                "financing-principal": "Loan Principal",
+                "financing-principal-detail": "100% of purchase value",
+                "financing-interest": "Interest Rate (TIN)",
+                "financing-interest-detail": "Fixed rate",
+                "financing-term": "Maximum Term",
+                "financing-term-detail": "Amortization period",
+                "financing-opening-fee": "Opening Fee",
+                "financing-opening-fee-detail": "Percentage on principal",
+                "financing-study-fee": "Study Fee",
+                "financing-study-fee-detail": "Percentage on principal",
+                "financing-monthly-payment": "Approximate Monthly Payment",
+                "financing-monthly-payment-detail": "Principal + interest",
+                "financing-annual-cost": "Annual Debt Cost",
+                "financing-annual-cost-detail": "12 monthly payments",
+                "financing-analysis-title": "Financing Structure Analysis",
+                "financing-analysis-text": "The proposed financing structure presents several elements that increase the total cost of the operation:",
+                "financing-analysis-1": "<strong>High Fees:</strong> Opening (1.5%) and study (0.5%) fees total 480,000 €, an additional 2% on the principal.",
+                "financing-analysis-2": "<strong>High Interest Rate:</strong> A 4.5% rate for a commercial property in the current market is relatively high, especially considering the asset's risks.",
+                "financing-analysis-3": "<strong>Limited Term:</strong> A 15-year term for this type of real estate asset is relatively short, resulting in high monthly payments.",
+                "financing-analysis-4": "<strong>100% Financing:</strong> Although it reduces the need for initial capital, it significantly increases risk and total financial cost.",
+                "kpi-total-cost": "Total Financial Cost",
+                "kpi-total-interest": "Total Interest Paid",
+                "kpi-debt-ratio": "Debt/Value Ratio",
+                "currency-risk-title": "6. Exchange Risk Analysis",
+                "currency-risk-alert-title": "CRITICAL CURRENCY RISK",
+                "currency-risk-alert-text": "The operation presents a significant exchange risk due to monetary asymmetry:",
+                "currency-risk-1": "<strong>USD Financing:</strong> The loan is granted in US dollars.",
+                "currency-risk-2": "<strong>EUR Revenues:</strong> All revenues generated by the parking will be in euros.",
+                "currency-risk-3": "<strong>USD Payments:</strong> Debt service must be paid in dollars.",
+                "currency-impact-title": "Impact of Exchange Risk on Debt Cost",
+                "currency-no-risk": "No exchange risk:",
+                "currency-10-percent": "With EUR/USD -10%:",
+                "currency-20-percent": "With EUR/USD -20%:",
+                "currency-table-scenario": "EUR/USD Scenario",
+                "currency-table-cost": "Annual Debt Cost (€)",
+                "currency-table-increase": "Increase vs. Base",
+                "currency-table-impact": "Viability Impact",
+                "currency-current-rate": "Current Rate (1.08)",
+                "currency-base": "Base",
+                "currency-10-percent-fall": "10% Drop (0.97)",
+                "currency-critical": "Critical",
+                "currency-20-percent-fall": "20% Drop (0.86)",
+                "currency-unviable": "Total Unviability",
+                "currency-strategies-title": "Exchange Hedging Strategies",
+                "currency-strategies-text": "To mitigate this risk, the following is recommended:",
+                "currency-strategy-1": "<strong>FX Swap:</strong> Currency swap to fix the exchange rate for the entire loan life. Estimated cost: 390,000-520,000 € annually.",
+                "currency-strategy-2": "<strong>FX Collar:</strong> Establishes a range of rates (minimum and maximum). Estimated cost: 195,000-260,000 € annually.",
+                "currency-strategy-3": "<strong>Forward Contracts:</strong> Fixes the exchange rate for future payments. Estimated cost: 260,000-325,000 € annually.",
+                "currency-coverage-impact-title": "Impact of Coverage on Viability",
+                "currency-coverage-impact-text": "Including coverage cost directly affects the viability analysis:",
+                "currency-coverage-impact-1": "<strong>Increased Financial Cost:</strong> Coverage adds between 195,000 and 520,000 € annually to the debt cost.",
+                "currency-coverage-impact-2": "<strong>Elevated Break-even Point:</strong> With coverage, the required occupancy for break-even increases from 103% to 112-125%.",
+                "currency-coverage-impact-3": "<strong>Compromised Viability:</strong> The additional coverage cost makes the operation completely unviable under current conditions.",
+                "sotratec-asset-info": "Asset: <b>Gran Vía 48 Parking</b> | Owner: <b>Grupo Bolton</b>",
+                "sotratec-sample-title": "1. Sample Distribution (n=100 Witnesses)",
+                "sotratec-sample-text": "SOTRATEC has compiled 100 references to transactions and active offers in the Centro district (750m radius) to establish the real value range.",
+                "sotratec-market-average": "Market Average",
+                "sotratec-min-detected": "Minimum Detected",
+                "sotratec-max-detected": "Maximum Detected",
+                "sotratec-bolton-offer": "Bolton Offer",
+                "sotratec-analysis-ring": "Analysis Ring",
+                "sotratec-analysis-samples": "Nº Samples",
+                "sotratec-analysis-range": "Price Range (€)",
+                "sotratec-analysis-deviation": "Deviation vs GV48",
+                "sotratec-zone-0": "Zone 0 (Gran Vía / Callao / Santo Domingo)",
+                "sotratec-zone-1": "Zone 1 (San Bernardo / Fuencarral / Chueca)",
+                "sotratec-zone-2": "Zone 2 (Justicia / Malasaña / Ópera)",
+                "sotratec-analyzed-asset": "ANALYZED ASSET (Gran Vía 48)",
+                "sotratec-fiscal-title": "2. Fiscal Pressure and Cadastral Value Analysis",
+                "sotratec-fiscal-text": "The gap between the market value sought by the seller and the administrative valuation represents a tax inspection risk (Value Verification).",
+                "sotratec-fiscal-concept": "Tax Concept",
+                "sotratec-fiscal-sector": "Sector Average (Center)",
+                "sotratec-fiscal-impact": "Gran Vía 48 Impact",
+                "sotratec-fiscal-anomaly": "Detected Anomaly",
+                "sotratec-cadastral-value": "Average Cadastral Value",
+                "sotratec-aligned": "Aligned",
+                "sotratec-ibi-annual": "Annual IBI Receipt",
+                "sotratec-moderate": "Moderate (+15%)",
+                "sotratec-price-cadastral-ratio": "Price/Cadastral Value Ratio",
+                "sotratec-high-fiscal-risk": "HIGH FISCAL RISK",
+                "sotratec-fiscal-verdict": "SOTRATEC VERDICT:",
+                "sotratec-fiscal-warning-text": "The Madrid Regional Tax Administration uses reference values based on average transactions in the area. Making a purchase of 75,000€/space on an asset with a cadastral value of ~20,000€ places the operation in a "Maximum Audit Risk" percentile, potentially leading to a complementary settlement for Property Transfer Tax (ITP).",
+                "sotratec-conclusion-title": "3. Audit Conclusion",
+                "sotratec-conclusion-text": "After analyzing 100 references and the associated tax burden, SOTRATEC concludes that the seller's valuation is <b>speculative</b>:",
+                "sotratec-conclusion-1": "The price does not respond to the physical reality of the spaces (weight and height limitations).",
+                "sotratec-conclusion-2": "The claimed value exceeds by 17,000 € the most expensive witness on the entire Gran Vía (58,000 €).",
+                "sotratec-conclusion-3": "The company structure under <b>Grupo Bolton</b> with unfiled accounts suggests poor administrative management that does not justify the requested price premium.",
+                "sotratec-footer-note": "This document is a technical annex owned by SOTRATEC for exclusive use in the negotiation of asset GV48.",
+                "technical-report-title": "Technical Discrepancy Operational Report",
+                "technical-report-subtitle": "Project: <b>Callao Parking - Gran Vía 48</b>",
+                "technical-comparison-title": "1. Dimension and Capacity Comparison",
+                "technical-comparison-text": "SOTRATEC presents the direct comparison between the <i>Investment Dossier</i> data and the real operational data published on the official booking platform.",
+                "technical-table-parameter": "Technical Parameter",
+                "technical-table-dossier": "Seller Dossier (Theoretical)",
+                "technical-table-real": "Official Booking Website (Real)",
+                "technical-table-status": "Status",
+                "technical-max-weight": "Maximum Weight",
+                "technical-max-weight-dossier": "Up to 2,500 kg",
+                "technical-max-weight-real": "2,000 kg",
+                "technical-max-height": "Maximum Height",
+                "technical-max-height-dossier": "\"Suitable for Vans/SUVs\"",
+                "technical-max-height-real": "1.80 meters",
+                "technical-max-length": "Maximum Length",
+                "technical-max-length-dossier": "\"Any Sedan\"",
+                "technical-max-length-real": "5.00 meters",
+                "technical-ground-clearance": "Ground Clearance",
+                "technical-ground-clearance-dossier": "Not specified",
+                "technical-ground-clearance-real": "10 cm (Minimum)",
+                "technical-status-falsified": "FALSIFIED",
+                "technical-status-restricted": "RESTRICTED",
+                "technical-status-incompatible": "INCOMPATIBLE",
+                "technical-status-critical": "CRITICAL",
+                "technical-evidence-title": "2. Public Source Evidence (Proof of Reality)",
+                "technical-evidence-text": "To guarantee the transparency of this audit, SOTRATEC attaches direct access to the current operational technical data source. These data are those that legally link the parking with the end user:",
+                "technical-source-title": "SOURCE: MISPARKINGS.COM - CALLAO TECHNICAL SHEET",
+                "technical-source-accepted-vehicles": "> Accepted vehicles: Standard sedans only.",
+                "technical-source-max-dimensions": "> Maximum dimensions: 5.00m long | 1.80m high | 2.10m wide.",
+                "technical-source-max-weight": "> Maximum weight: 2,000 kg.",
+                "technical-source-note": "> Note: Vehicles with ground clearance < 10cm are prohibited.",
+                "technical-verify-text": "You can verify the veracity of these technical limits at the following official link:",
+                "technical-verify-link": "🔗 View Public Data on MisParkings.com",
+                "technical-verdict-title": "3. Engineering Verdict",
+                "technical-verdict-text": "The detected discrepancy invalidates the dossier's "Luxury" business model. A system limited to <b>2,000kg and 5 meters</b> excludes the main assets of the current premium segment (Tesla Model X, Mercedes EQ-Series, Audi e-tron and Range Rover), drastically reducing the asset's equity value.",
+                "recalculation-report-title": "CASH FLOW CORRECTION REPORT",
+                "recalculation-report-subtitle": "Asset: <b>Gran Vía 48</b> | Based on operational data from <i>misparkings.com</i>",
+                "recalculation-parameters-title": "1. Operating Parameter Adjustment",
+                "recalculation-parameters-text": "SOTRATEC has recalculated the income generation capacity by eliminating theoretical projections and applying real public sale prices.",
+                "recalculation-table-concept": "Concept",
+                "recalculation-table-dossier": "Seller Dossier",
+                "recalculation-table-reality": "SOTRATEC Reality",
+                "recalculation-table-deviation": "Deviation",
+                "recalculation-hourly-price": "Hourly Price (VAT incl.)",
+                "recalculation-occupancy": "Average Occupancy",
+                "recalculation-monthly-income": "Monthly Income/Space",
+                "recalculation-note": "*Adjustment for technical inefficiency and published 45-minute waiting times.",
+                "recalculation-valuation-title": "2. Asset Valuation by Real Yield",
+                "recalculation-valuation-text": "Under a realistic operating scenario, EBITDA contracts significantly, positioning the asset's value at secondary market levels.",
+                "recalculation-max-valuation": "SOTRATEC MAXIMUM RECOMMENDED VALUATION",
+                "recalculation-difference": "Difference vs. Seller's Claim: <b>-11,850,000 €</b>",
+                "recalculation-conclusion-title": "3. Audit Conclusion",
+                "recalculation-conclusion-text": "The 24M € sale claim is based on a <b>non-existent business model</b>. Neither the robot admits the vehicles necessary for the premium segment, nor does current demand validate that price. SOTRATEC advises against purchase above 12.5M €, considering maintenance risk and the irregular Commercial Registry situation.",
+                "normalization-title": "10. Operating Account Audit (Normalization)",
+                "normalization-text": "SOTRATEC has analyzed the operating expenses (555,000 €/year) provided. An undervaluation of structural costs is detected for a high-intensity robotic system.",
+                "normalization-table-concept": "Item",
+                "normalization-table-declared": "Declared",
+                "normalization-table-adjustment": "SOTRATEC Adjustment",
+                "normalization-table-note": "Technical Note",
+                "normalization-maintenance": "Maintenance",
+                "normalization-maintenance-note": "Includes CAPEX provision for obsolescence.",
+                "normalization-personnel": "Personnel/Management",
+                "normalization-personnel-note": "Reinforcement needed due to 45 min queues.",
+                "normalization-ebitda": "RESULTING EBITDA",
+                "normalization-ebitda-note": "*Based on real revenues of 2.35€/h.",
+                "normalization-conclusion-title": "CONCLUSION:",
+                "normalization-conclusion-text": "The valuation of 24,000,000 € would imply paying a multiple of <b>x24.8 on the Real EBITDA</b>, which is completely outside the investment parameters for robotic infrastructure assets.",
+                "valuation-title": "11. Critical Analysis of Capitalization Valuation (Cap Rate)",
+                "valuation-text": "Grupo Bolton proposes a valuation of <b>24,000,000 €</b> based on a 4.5% Cap Rate. SOTRATEC identifies a serious methodological deviation by treating a robotic industrial business as a passive real estate income.",
+                "valuation-bolton-title": "Bolton Scenario (Theoretical)",
+                "valuation-bolton-ebitda": "Projected EBITDA: 2,517,400 €",
+                "valuation-bolton-cap-rate": "Applied Cap Rate: 4.5%",
+                "valuation-bolton-valuation": "Valuation S/Dossier: > 50,000,000 €",
+                "valuation-bolton-note": "*They consider 24M € as an "Opportunity".",
+                "valuation-sotratec-title": "SOTRATEC Scenario (Audited)",
+                "valuation-sotratec-ebitda": "Realized EBITDA: 965,000 €",
+                "valuation-sotratec-cap-rate": "Market Cap Rate: 8.0%",
+                "valuation-sotratec-valuation": "Technical Valuation: 12,062,500 €",
+                "valuation-sotratec-note": "*Target price for viable investment.",
+                "valuation-verdict-title": "FINAL VERDICT:",
+                "valuation-verdict-text": "Capitalization at 4.5% is inappropriate for an asset with <b>45-minute waits</b> and <b>load limitation to 2,000kg</b>. The risk of flow interruption due to software failure or need for mechanical renewal requires a minimum discount rate of 8.0%.",
+                "resolution-conclusion-title": "CONCLUSION: COMPLETELY UNVIABLE OPERATION",
+                "resolution-conclusion-text": "After the exhaustive analysis of all critical factors, including three independent SOTRATEC reports, our recommendation is to <strong>DEFINITIVELY ABANDON</strong> this operation for the following demolishing reasons:",
+                "risk-level-label": "Risk Level: 99%",
+                "resolution-reason-1": "<strong>Extreme Overvaluation (97.6%):</strong> The requested price (75,000 €/space) exceeds by 11,850,000 € the maximum valuation recommended by SOTRATEC (12,150,000 €) based on real operational data.",
+                "resolution-reason-2": "<strong>Falsified Technical Data:</strong> The technical discrepancy report demonstrates that the seller has falsified the parking's specifications, declaring 2,500 kg maximum weight when the reality is 2,000 kg.",
+                "resolution-reason-3": "<strong>Overestimated Revenues (62.6%):</strong> The financial recalculation shows that the real monthly income per space is 299 €, not the 800 € projected by the seller.",
+                "resolution-reason-4": "<strong>Inflated Prices (47.7%):</strong> The real hourly price is 2.35 €, almost half of the 4.50 € used in the seller's projections.",
+                "resolution-reason-5": "<strong>Critical Fiscal Risk:</strong> The Price/Cadastral Value ratio of 3.73x places the operation in a "Maximum Audit Risk" percentile with possible complementary ITP settlement.",
+                "resolution-reason-6": "<strong>Critical Exchange Risk:</strong> The monetary asymmetry (USD financing, EUR revenues) adds significant risk and high coverage costs.",
+                "resolution-reason-7": "<strong>Opaque Legal Structure:</strong> The lack of filed accounts and financial opacity of the selling company represents an unacceptable risk.",
+                "sotratec-final-verdict-title": "SOTRATEC FINAL VERDICT",
+                "sotratec-final-verdict-text": "The 24M € sale claim is based on a <b>non-existent business model</b>. Neither the robot admits the vehicles necessary for the premium segment, nor does current demand validate the projected prices. SOTRATEC advises against purchase above 12.5M €.",
+                "alternative-strategy-title": "Alternative Strategy",
+                "alternative-strategy-text": "If you wish to reconsider the operation, <strong>ALL</strong> of the following conditions must be met:",
+                "alternative-strategy-1": "<strong>Extreme Price Reduction:</strong> Negotiate up to a maximum of 12,000,000-12,500,000 €, in line with SOTRATEC's valuation based on real operational data.",
+                "alternative-strategy-2": "<strong>Absolute Transparency:</strong> Presentation of all accounts and financial statements for the last 3 years.",
+                "alternative-strategy-3": "<strong>Complete Due Diligence:</strong> Verification of all legal, tax, and technical aspects of the asset.",
+                "alternative-strategy-4": "<strong>Improved Financial Conditions:</strong> Interest rate reduction to 3.5-4.0%, fee elimination, and term extension to 25-30 years.",
+                "alternative-strategy-5": "<strong>Exchange Risk Coverage:</strong> Agreement with the seller to share exchange rate coverage costs during the first 5 years.",
+                "final-recommendation-title": "Final Recommendation",
+                "final-recommendation-text": "Given the confluence of multiple risk factors, the extreme overvaluation of the asset confirmed by three independent SOTRATEC reports, falsified technical data, and significant fiscal risk, we recommend <strong>DEFINITIVELY ABANDONING this operation</strong> and seek opportunities with greater transparency and real viability.",
+                "loi-title": "13. Letter of Intent and Counteroffer",
+                "print-loi-button": "Print Counteroffer Document",
+                "confidential-text": "Strictly Confidential<br>Subject to Due Diligence",
+                "sotratec-subtitle": "Engineering & Corporate Strategy",
+                "attention-to": "To the attention of the Real Estate Assets Manager / Financial Director",
+                "bolton-spain": "GRUPO BOLTON (Spain)",
+                "loi-main-title": "Letter of Intent and Non-Binding Offer (NBO)",
+                "loi-asset": "Asset:",
+                "loi-asset-detail": "Robotized Gran Vía 48 Parking (Madrid).",
+                "loi-structure": "Structure:",
+                "loi-structure-detail": "Acquisition of 100% of the SPV's shares.",
+                "loi-reference": "Reference:",
+                "loi-intro-text": "After the exhaustive technical and financial audit conducted by <b>SOTRATEC</b> on the provided file and contrast with public operational data (misparkings.com), we present the following formal counteroffer:",
+                "loi-valuation-title": "1. PURCHASE VALUATION",
+                "loi-valuation-text": "Based on the real cash flow derived from an average rate of <b>2.35 €/h</b> and the certified technical limitations of the <i>WÖHR Parksafe 582</i> system (2,000 kg / 5.00 m limit), we set the acquisition value at:",
+                "loi-total-price": "TOTAL ACQUISITION PRICE (Equity Value)",
+                "loi-total-price-text": "(Twelve million one hundred fifty thousand euros)",
+                "loi-conditions-title": "2. SUSPENSIVE CONDITIONS ("SINE QUA NON" CONDITIONS)",
+                "loi-conditions-text": "This offer is strictly subject to the following milestones being met by the Seller:",
+                "loi-condition-1": "<b>Commercial Regularization:</b> Lifting the registry closure by filing Annual Accounts for fiscal years 2024 and 2025.",
+                "loi-condition-1-detail": "",
+                "loi-condition-2": "<b>Technical Certification:</b> Delivery of the maintenance log signed by the original manufacturer (WÖHR) and latest OCA inspection report without serious deficiencies.",
+                "loi-condition-2-detail": "",
+                "loi-condition-3": "<b>Load Test:</b> On-site verification of vehicle delivery times (Cycle Times) to rule out mechanical obsolescence.",
+                "loi-condition-3-detail": "",
+                "loi-justification-title": "3. OFFER JUSTIFICATION",
+                "loi-justification-text": "Our valuation is based on a statistical sample of <b>100 witnesses</b> on the Gran Vía axis, where the market average is 41,750 €/space. The initial claim of 75,000 €/space lacks technical support as the asset is incompatible with 90% of the current luxury electric vehicle (EV) segment due to weight restrictions.",
+                "loi-validity-text": "This offer is valid for 15 natural days from the date of issuance.",
+                "loi-investor-director": "Signed: Investment Director",
+                "loi-acceptance-bolton": "ACCEPTANCE GRUPO BOLTON",
+                "loi-signature": "Seal and Signature",
+                "madrid-date": "Madrid",
+                "disclaimer-title": "Legal Notice:",
+                "disclaimer-text": "This analysis is based on available information and subject to verification. It does not constitute a definitive investment recommendation. Consultation with specialized financial, legal, and real estate advisors is recommended before making any decision."
+            }
+        };
+
+        const langButton = document.getElementById('langToggle');
+        const htmlElement = document.documentElement;
+        let currentLang = 'es';
+
+        // Función para cambiar el idioma
+        function changeLanguage() {
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            currentLang = newLang;
+            htmlElement.setAttribute('lang', newLang);
+            langButton.textContent = newLang === 'es' ? 'EN' : 'ES';
+
+            // Actualizar el título de la página
+            document.title = translations[newLang]["page-title"];
+
+            // Actualizar todos los elementos con atributo data-translate-key
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[newLang] && translations[newLang][key]) {
+                    element.innerHTML = translations[newLang][key];
+                }
+            });
+
+            // Guardar preferencia de idioma en localStorage
+            localStorage.setItem('preferredLanguage', newLang);
+        }
+
+        // Event listener para el botón de cambio de idioma
+        langButton.addEventListener('click', changeLanguage);
+
+        // Cargar idioma preferido al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && savedLang !== 'es') {
+                changeLanguage();
+            }
+        });
+
+        // Animación de scroll suave para los enlaces de navegación
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
