@@ -1303,6 +1303,259 @@
                 flex-direction: column;
             }
         }
+        /* ===== Estilos para la Sección 14: Resolución del Comité de Inversiones ===== */
+        .committee-section {
+            border: 3px solid #b71c1c;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(183, 28, 28, 0.15);
+            margin-top: 30px;
+        }
+
+        .committee-banner {
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 50%, #00acc1 100%);
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .committee-banner .resolution-logo {
+            height: 90px;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            flex-shrink: 0;
+        }
+
+        .committee-banner .banner-text { flex: 1; }
+
+        .committee-banner .banner-text h3 {
+            color: white;
+            margin: 0 0 5px 0;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .committee-banner .banner-text p {
+            margin: 2px 0;
+            font-size: 0.9em;
+            opacity: 0.95;
+        }
+
+        .committee-banner .expediente {
+            background: rgba(255,255,255,0.18);
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.3);
+            display: inline-block;
+            margin-top: 6px;
+        }
+
+        .status-bar {
+            background: #b71c1c;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .status-bar .status-icon { font-size: 1.4em; margin-right: 8px; }
+
+        .committee-body { padding: 30px; }
+
+        .committee-meta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            background: #f5f7fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 5px solid #0d47a1;
+        }
+
+        .committee-meta .meta-item { text-align: center; }
+
+        .committee-meta .meta-label {
+            display: block;
+            font-size: 0.75em;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .committee-meta .meta-value {
+            font-weight: bold;
+            color: #0d47a1;
+            font-size: 0.95em;
+        }
+
+        .dictamen-executivo {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 25px 0;
+        }
+
+        .dictamen-executivo h4 {
+            color: #e65100;
+            margin-top: 0;
+            font-size: 1.15em;
+        }
+
+        .fundamentos-title {
+            color: #b71c1c;
+            font-size: 1.3em;
+            border-bottom: 3px solid #b71c1c;
+            padding-bottom: 10px;
+            margin-top: 35px;
+        }
+
+        .denial-point {
+            background: #fafafa;
+            border-left: 6px solid #b71c1c;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 25px;
+            margin: 18px 0;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .denial-point:hover {
+            transform: translateX(4px);
+            box-shadow: 0 3px 10px rgba(183, 28, 28, 0.15);
+        }
+
+        .denial-point .point-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .denial-point .point-number {
+            background: #b71c1c;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            flex-shrink: 0;
+        }
+
+        .denial-point h5 {
+            color: #b71c1c;
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        .denial-point .failure-block,
+        .denial-point .impact-block {
+            margin: 10px 0;
+            padding: 12px 15px;
+            border-radius: 6px;
+        }
+
+        .denial-point .failure-block {
+            background: #ffebee;
+            border-left: 4px solid #ef5350;
+        }
+
+        .denial-point .impact-block {
+            background: #fff8e1;
+            border-left: 4px solid #ffa726;
+        }
+
+        .denial-point .failure-block strong,
+        .denial-point .impact-block strong {
+            display: inline;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            letter-spacing: 0.5px;
+            margin-right: 6px;
+            margin-bottom: 0;
+        }
+
+        .denial-point .failure-block strong { color: #c62828; }
+        .denial-point .impact-block strong { color: #ef6c00; }
+
+        .committee-signature {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px dashed #ccc;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .signature-block { text-align: center; }
+
+        .signature-block .sig-name {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.8em;
+            color: #0d47a1;
+            margin-bottom: 5px;
+        }
+
+        .signature-block .sig-line-2 {
+            border-top: 2px solid #333;
+            padding-top: 8px;
+            font-size: 0.85em;
+            min-width: 280px;
+        }
+
+        .signature-block .sig-line-2 b { color: #0d47a1; }
+
+        .print-pdf-button {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 1.05em;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 50px;
+            margin: 10px 0 25px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 15px rgba(183, 28, 28, 0.4);
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .print-pdf-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(183, 28, 28, 0.5);
+            background: linear-gradient(135deg, #b71c1c 0%, #880e4f 100%);
+        }
+
+        .print-pdf-button i { font-size: 1.2em; }
+
+        @media (max-width: 768px) {
+            .committee-banner { flex-direction: column; text-align: center; }
+            .committee-meta { grid-template-columns: repeat(2, 1fr); }
+            .committee-signature { justify-content: center; }
+        }
+        /* ===== Fin estilos Sección 14 ===== */
+
     </style>
 </head>
 <body>
@@ -1310,7 +1563,7 @@
     <div class="container">
         <header>
             <div class="header-left">
-                <img src="https://z-cdn-media.chatglm.cn/files/3512e86d-f67c-42b5-bdd5-0c34e601b1b5.png?auth_key=1874265345-d95614959c5e47d69b84afb1c7d5dfd9-0-b53b03479912d49e74c645595caf6b49" alt="Propfastinvest Group Ltd. Logo" class="logo">
+                <img src="image/logo.png" alt="Advance Intelligence Technology Logo" class="logo">
                 <div class="header-text">
                     <h1 data-translate-key="main-title">Análisis Crítico de Viabilidad</h1>
                     <p data-translate-key="asset-info"><strong>Activo:</strong> Parking Callao (Gran Vía 48 / Tudescos)</p>
@@ -1333,6 +1586,7 @@
             <a href="#analisis-valoracion" data-translate-key="nav-11">11. Análisis Valoración</a>
             <a href="#resolucion" data-translate-key="nav-12">12. Resolución Final</a>
             <a href="#contraoferta" data-translate-key="nav-13">13. Contraoferta</a>
+            <a href="#resolucion-comite" data-translate-key="nav-14">14. Resolución Comité</a>
         </nav>
 
         <main>
@@ -2147,6 +2401,165 @@
                 </div>
             </section>
 
+
+            <!-- ===== NUEVA SECCIÓN 14: Resolución Definitiva del Comité de Inversiones ===== -->
+            <section id="resolucion-comite">
+                <h2 data-translate-key="committee-title">14. Resolución del Comité de Inversiones</h2>
+
+                <p data-translate-key="committee-intro" style="margin-bottom: 20px;">A continuación se incorpora la resolución <strong>definitiva</strong> emitida por el Comité de Inversiones de <strong>ADVANCE INTELLIGENCE TECHNOLOGY</strong>, entidad financiadora, tras la evaluación integral de la operación. Esta resolución extiende y formaliza el análisis previo desde la perspectiva estricta del prestamista, incorporando los fundamentos técnicos que hacen la operación <strong>estructuralmente inviable</strong> y que motivan el <strong>cierre definitivo y archivo del expediente</strong>.</p>
+
+                <button class="print-pdf-button" onclick="printResolutionPDF()">
+                    <i class="fas fa-file-pdf"></i>
+                    <span data-translate-key="print-pdf-button">Imprimir Resolución del Comité (PDF)</span>
+                </button>
+
+                <div class="committee-section">
+                    <!-- Banner superior con logo -->
+                    <div class="committee-banner">
+                        <img src="image/logo.png" alt="Advance Intelligence Technology" class="resolution-logo">
+                        <div class="banner-text">
+                            <h3>Advance Intelligence Technology</h3>
+                            <p data-translate-key="committee-banner-subtitle">Corporate Governance | Florida, USA | Est. 2024</p>
+                            <span class="expediente">Ref. Expediente: FIN-2024-CALLAO-048</span>
+                        </div>
+                    </div>
+
+                    <!-- Barra de estado: CIERRE DEFINITIVO / DENEGADO -->
+                    <div class="status-bar">
+                        <span><i class="fas fa-ban status-icon"></i><span data-translate-key="status-rejected">Cierre Definitivo / Denegado</span></span>
+                        <span data-translate-key="status-rejected-en">CASE CLOSED / REJECTED</span>
+                    </div>
+
+                    <div class="committee-body">
+                        <!-- Metadatos: la FECHA es dinámica (día de impresión) -->
+                        <div class="committee-meta">
+                            <div class="meta-item">
+                                <span class="meta-label" data-translate-key="meta-to">Para</span>
+                                <span class="meta-value" data-translate-key="meta-to-value">Dirección General / Comité de Inversiones</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label" data-translate-key="meta-subject">Asunto</span>
+                                <span class="meta-value" data-translate-key="meta-subject-value">Dictamen Financiero Definitivo — Parking Callao (Gran Vía 48, Madrid)</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label" data-translate-key="meta-date">Fecha</span>
+                                <span class="meta-value" id="resolutionDate">—</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label" data-translate-key="meta-status">Estado</span>
+                                <span class="meta-value" style="color:#b71c1c;" data-translate-key="meta-status-value">CIERRE DEFINITIVO / DENEGADO</span>
+                            </div>
+                        </div>
+
+                        <!-- Título de la resolución -->
+                        <div style="text-align:center; margin: 20px 0 25px 0; padding: 15px; background: linear-gradient(90deg, #ffebee 0%, #fff 50%, #ffebee 100%); border-radius: 6px;">
+                            <strong style="display:block; color:#b71c1c; font-size:1.15em; text-transform:uppercase; letter-spacing:1px;" data-translate-key="resolution-type">Resolución de Denegación y Cierre de Expediente</strong>
+                            <small style="color:#6c757d;" data-translate-key="resolution-type-en">Definitive Rejection & Case Closure Resolution</small>
+                        </div>
+
+                        <!-- Dictamen Ejecutivo Definitivo -->
+                        <div class="dictamen-executivo">
+                            <h4><i class="fas fa-gavel"></i> <span data-translate-key="dictamen-title">1. Dictamen Ejecutivo Definitivo</span></h4>
+                            <p data-translate-key="dictamen-text">Tras la evaluación integral de riesgos de la solicitud de financiación/inversión sobre el Parking Callao, <strong>ADVANCE INTELLIGENCE TECHNOLOGY declara la operación como FINANCIERAMENTE INVIABLE</strong>. Se acuerda el <strong>CIERRE DEFINITIVO Y ARCHIVO DEL EXPEDIENTE</strong> sin emisión de Term Sheet ni posibilidad de replanteamiento, al constituir una estructura con certidumbre de pérdidas financieras y destrucción de capital.</p>
+                        </div>
+
+                        <!-- Fundamentos técnicos detallados -->
+                        <h3 class="fundamentos-title" data-translate-key="fundamentos-title">2. Fundamentos Técnicos de la Denegación (Perspectiva del Financiador)</h3>
+
+                        <p data-translate-key="fundamentos-intro" style="margin-bottom: 20px;">El informe del comprador adolece de cuatro deficiencias estructurales que, desde la posición del prestamista, hacen la operación inviable. A continuación se detallan los fallos detectados y su impacto directo sobre la posición crediticia de ADVANCE INTELLIGENCE TECHNOLOGY:</p>
+
+                        <!-- Fundamento 2.1: Riesgo Cambiario -->
+                        <div class="denial-point">
+                            <div class="point-header">
+                                <div class="point-number">2.1</div>
+                                <h5 data-translate-key="denial-1-title">Omisión Absoluta del Riesgo Cambiario (USD vs. EUR)</h5>
+                            </div>
+                            <div class="failure-block">
+                                <strong data-translate-key="denial-1-failure-label">El fallo del informe:</strong>
+                                <span data-translate-key="denial-1-failure-text">No menciona en ningún punto que la financiación se pretende estructurar en <strong>USD</strong>, mientras que la caja que genera el aparcamiento en la Gran Vía madrileña es 100% en <strong>Euros</strong>.</span>
+                            </div>
+                            <div class="impact-block">
+                                <strong data-translate-key="denial-1-impact-label">Por qué nos afecta:</strong>
+                                <span data-translate-key="denial-1-impact-text">Como financiadores, si prestamos en USD sin exigir cobertura (hedging), una <strong>devaluación del Euro del 10%–15%</strong> provocaría el impago directo (default) del prestatario al encarecerle el servicio de la deuda en euros. El informe del comprador ignora este descalce monetario.</span>
+                            </div>
+                        </div>
+
+                        <!-- Fundamento 2.2: LTV -->
+                        <div class="denial-point">
+                            <div class="point-header">
+                                <div class="point-number">2.2</div>
+                                <h5 data-translate-key="denial-2-title">Evaluación de Garantías y LTV (Loan-to-Value) Incorrecta</h5>
+                            </div>
+                            <div class="failure-block">
+                                <strong data-translate-key="denial-2-failure-label">El fallo del informe:</strong>
+                                <span data-translate-key="denial-2-failure-text">El informe se centra en discutir si <strong>75.000 €/plaza</strong> es caro o si <strong>45.000 €/plaza</strong> es justo para el comprador.</span>
+                            </div>
+                            <div class="impact-block">
+                                <strong data-translate-key="denial-2-impact-label">Nuestra perspectiva:</strong>
+                                <span data-translate-key="denial-2-impact-text">A nosotros no nos basta con decir "está caro". Desde el punto de vista del inversor, el informe no establece el <strong>techo de apalancamiento seguro</strong>. Si el comprador pretende pedirnos un préstamo sobre la valoración de <strong>24 M€</strong>, nuestro ratio <strong>LTV real sería del 150%</strong> sobre el activo real (un riesgo inasumible).</span>
+                            </div>
+                        </div>
+
+                        <!-- Fundamento 2.3: Plan de Contingencia Técnico -->
+                        <div class="denial-point">
+                            <div class="point-header">
+                                <div class="point-number">2.3</div>
+                                <h5 data-translate-key="denial-3-title">Inexistencia de un Plan de Contingencia Técnico (Sistema Robotizado)</h5>
+                            </div>
+                            <div class="failure-block">
+                                <strong data-translate-key="denial-3-failure-label">El fallo del informe:</strong>
+                                <span data-translate-key="denial-3-failure-text">Menciona brevemente la "discordancia técnica", pero no cuantifica el <strong>riesgo de la tecnología robotizada</strong>.</span>
+                            </div>
+                            <div class="impact-block">
+                                <strong data-translate-key="denial-3-impact-label">Nuestra perspectiva:</strong>
+                                <span data-translate-key="denial-3-impact-text">En un parking robotizado de <strong>320–345 plazas</strong>, una avería grave del sistema de elevación o de las transelevadoras detiene el <strong>100% de la facturación</strong>. El informe no exige una auditoría de ingeniería ni un <strong>fondo de reserva (CAPEX)</strong> para mantenimiento del sistema robotizado que garantice que nuestra colateral no pierda valor.</span>
+                            </div>
+                        </div>
+
+                        <!-- Fundamento 2.4: Condicionantes Legales -->
+                        <div class="denial-point">
+                            <div class="point-header">
+                                <div class="point-number">2.4</div>
+                                <h5 data-translate-key="denial-4-title">Falta de Condicionantes Legales Obligatorios (Conditions Precedent)</h5>
+                            </div>
+                            <div class="failure-block">
+                                <strong data-translate-key="denial-4-failure-label">El fallo del informe:</strong>
+                                <span data-translate-key="denial-4-failure-text">Advierte de que la sociedad no presenta cuentas desde hace <strong>2 años</strong>, pero lo trata como una recomendación de precaución comercial.</span>
+                            </div>
+                            <div class="impact-block">
+                                <strong data-translate-key="denial-4-impact-label">Nuestra perspectiva:</strong>
+                                <span data-translate-key="denial-4-impact-text">Para un prestamista, la falta de cuentas durante <strong>24 meses</strong> debe ser una <strong>línea roja infranqueable (Deal Breaker)</strong>. No se puede desembolsar un solo euro/dólar sin exigirlo como <strong>condición suspensiva previa</strong> en la Hoja de Términos (Term Sheet).</span>
+                            </div>
+                        </div>
+
+                        <!-- Resumen de la resolución original (textos del PDF definitivo) -->
+                        <div class="logic-box" style="margin-top: 30px; background: #e3f2fd; border-left-color: #0d47a1;">
+                            <h3 data-translate-key="resolution-summary-title" style="color:#0d47a1;">3. Resumen Ejecutivo de los Fundamentos (Original del Comité)</h3>
+                            <ul>
+                                <li data-translate-key="resolution-summary-1"><strong>2.1 Inviabilidad y Riesgo de Impago (FX Mismatch):</strong> La desproporción entre la financiación requerida en USD e ingresos netos en EUR sin cobertura asegura un impago (default) técnico inevitable ante cualquier fluctuación cambial, garantizando pérdidas para nuestra firma.</li>
+                                <li data-translate-key="resolution-summary-2"><strong>2.2 Sobrevaloración Absoluta y Déficit de Colateral:</strong> La valoración pretendida de 75.000 €/plaza (24,0 M€) representa una burbuja del 48,7% respecto a mercado (16,0 M€). Financiar sobre dicho importe implica asumir una pérdida implícita no recuperable en caso de ejecución de garantías.</li>
+                                <li data-translate-key="resolution-summary-3"><strong>2.3 Vulnerabilidad Técnica e Incertidumbre Operativa:</strong> La ausencia de auditoría y la falta de provisiones para el sistema robotizado exponen al activo a paralizaciones operativas con pérdida directa de flujo de caja.</li>
+                                <li data-translate-key="resolution-summary-4"><strong>2.4 Incompatibilidad de Compliance y Transparencia:</strong> La opacidad mercantil (dos ejercicios sin depósito de cuentas) extingue cualquier margen de estructuración financiera y bloquea la admisión de la operación.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Firma -->
+                        <div class="committee-signature">
+                            <div class="signature-block">
+                                <div class="sig-name">Yakim Ivanov</div>
+                                <div class="sig-line-2">
+                                    <b>YAKIM IVANOV</b><br>
+                                    <span data-translate-key="sig-ceo">Chief Executive Officer (CEO)</span><br>
+                                    <span data-translate-key="sig-company">Advance Intelligence Technology</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="text-align: center; font-size: 0.8em; color: #6c757d; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;" data-translate-key="committee-footer">Advance Intelligence Technology — Florida, USA | Confidencial / Confidential — Expediente FIN-2024-CALLAO-048</p>
+                    </div>
+                </div>
+            </section>
+
             <div class="disclaimer">
                 <strong data-translate-key="disclaimer-title">Aviso Legal:</strong> <span data-translate-key="disclaimer-text">Este análisis se basa en la información disponible y está sujeto a verificación. No constituye una recomendación de inversión definitiva. Se aconseja la consulta con asesores financieros, legales e inmobiliarios especializados antes de tomar cualquier decisión.</span>
             </div>
@@ -2158,7 +2571,7 @@
     </div>
 
     <footer>
-        © 2026 Propfastinvest Group Ltd.
+        © 2026 ADVANCE INTELLIGENCE TECHNOLOGY — Florida, USA | Análisis crítico de viabilidad — Parking Callao (Gran Vía 48, Madrid)
     </footer>
 
     <script>
@@ -2169,6 +2582,57 @@
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             dateElement.textContent = today.toLocaleDateString('es-ES', options);
         });
+
+
+        // ===== Función para imprimir el PDF de la resolución del comité =====
+        // La fecha del día de impresión se actualiza justo antes de abrir el PDF.
+        function printResolutionPDF() {
+            // Actualizar la fecha mostrada con el día actual de impresión
+            updateResolutionDate();
+
+            const pdfUrl = 'resolution-callao1.pdf';
+            // Abrir el PDF en una nueva pestaña; el navegador ofrece el botón
+            // nativo de impresión / descarga del PDF original emitido por el comité.
+            const win = window.open(pdfUrl, '_blank');
+            if (!win) {
+                // Si el navegador bloquea el pop-up, ofrecer descarga directa
+                const link = document.createElement('a');
+                link.href = pdfUrl;
+                link.download = 'resolution-callao1.pdf';
+                link.target = '_blank';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                alert('Se ha abierto el PDF de la resolución en una nueva pestaña. Si no se abre, revise el bloqueador de ventanas emergentes.');
+            } else {
+                win.onload = function() {
+                    setTimeout(function() {
+                        try { win.focus(); win.print(); } catch(e) {}
+                    }, 1200);
+                };
+            }
+        }
+
+        // ===== Fecha dinámica: día en que se imprime / visualiza el documento =====
+        // La fecha se formatea en el idioma actualmente activo (es / en).
+        // Usamos window.currentLang porque la variable let currentLang se declara
+        // más abajo en el script; acceder a ella en su TDZ lanzaría ReferenceError.
+        function updateResolutionDate() {
+            const dateElement = document.getElementById('resolutionDate');
+            if (dateElement) {
+                const now = new Date();
+                const lang = window.currentLang || 'es';
+                const locale = lang === 'en' ? 'en-US' : 'es-ES';
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                dateElement.textContent = now.toLocaleDateString(locale, options);
+            }
+        }
+
+        // Al cargar la página, fijar la fecha al día actual (día de impresión).
+        // Se ejecuta directamente (el elemento ya existe, el script va al final del body)
+        // y además queda registrado por si acaso para DOMContentLoaded.
+        updateResolutionDate();
+        document.addEventListener('DOMContentLoaded', updateResolutionDate);
 
         // Función para imprimir solo el documento LOI
         function printLOI() {
@@ -2390,7 +2854,7 @@
                 "sotratec-price-cadastral-ratio": "Price/Cadastral Value Ratio",
                 "sotratec-high-fiscal-risk": "HIGH FISCAL RISK",
                 "sotratec-fiscal-verdict": "SOTRATEC VERDICT:",
-                "sotratec-fiscal-warning-text": "The Madrid Regional Tax Administration uses reference values based on average transactions in the area. Making a purchase of 75,000€/space on an asset with a cadastral value of ~20,000€ places the operation in a "Maximum Audit Risk" percentile, potentially leading to a complementary settlement for Property Transfer Tax (ITP).",
+                "sotratec-fiscal-warning-text": "The Madrid Regional Tax Administration uses reference values based on average transactions in the area. Making a purchase of 75,000€/space on an asset with a cadastral value of ~20,000€ places the operation in a \"Maximum Audit Risk\" percentile, potentially leading to a complementary settlement for Property Transfer Tax (ITP).",
                 "sotratec-conclusion-title": "3. Audit Conclusion",
                 "sotratec-conclusion-text": "After analyzing 100 references and the associated tax burden, SOTRATEC concludes that the seller's valuation is <b>speculative</b>:",
                 "sotratec-conclusion-1": "The price does not respond to the physical reality of the spaces (weight and height limitations).",
@@ -2431,7 +2895,7 @@
                 "technical-verify-text": "You can verify the veracity of these technical limits at the following official link:",
                 "technical-verify-link": "🔗 View Public Data on MisParkings.com",
                 "technical-verdict-title": "3. Engineering Verdict",
-                "technical-verdict-text": "The detected discrepancy invalidates the dossier's "Luxury" business model. A system limited to <b>2,000kg and 5 meters</b> excludes the main assets of the current premium segment (Tesla Model X, Mercedes EQ-Series, Audi e-tron and Range Rover), drastically reducing the asset's equity value.",
+                "technical-verdict-text": "The detected discrepancy invalidates the dossier's \"Luxury\" business model. A system limited to <b>2,000kg and 5 meters</b> excludes the main assets of the current premium segment (Tesla Model X, Mercedes EQ-Series, Audi e-tron and Range Rover), drastically reducing the asset's equity value.",
                 "recalculation-report-title": "CASH FLOW CORRECTION REPORT",
                 "recalculation-report-subtitle": "Asset: <b>Gran Vía 48</b> | Based on operational data from <i>misparkings.com</i>",
                 "recalculation-parameters-title": "1. Operating Parameter Adjustment",
@@ -2470,7 +2934,7 @@
                 "valuation-bolton-ebitda": "Projected EBITDA: 2,517,400 €",
                 "valuation-bolton-cap-rate": "Applied Cap Rate: 4.5%",
                 "valuation-bolton-valuation": "Valuation S/Dossier: > 50,000,000 €",
-                "valuation-bolton-note": "*They consider 24M € as an "Opportunity".",
+                "valuation-bolton-note": "*They consider 24M € as an \"Opportunity\".",
                 "valuation-sotratec-title": "SOTRATEC Scenario (Audited)",
                 "valuation-sotratec-ebitda": "Realized EBITDA: 965,000 €",
                 "valuation-sotratec-cap-rate": "Market Cap Rate: 8.0%",
@@ -2485,7 +2949,7 @@
                 "resolution-reason-2": "<strong>Falsified Technical Data:</strong> The technical discrepancy report demonstrates that the seller has falsified the parking's specifications, declaring 2,500 kg maximum weight when the reality is 2,000 kg.",
                 "resolution-reason-3": "<strong>Overestimated Revenues (62.6%):</strong> The financial recalculation shows that the real monthly income per space is 299 €, not the 800 € projected by the seller.",
                 "resolution-reason-4": "<strong>Inflated Prices (47.7%):</strong> The real hourly price is 2.35 €, almost half of the 4.50 € used in the seller's projections.",
-                "resolution-reason-5": "<strong>Critical Fiscal Risk:</strong> The Price/Cadastral Value ratio of 3.73x places the operation in a "Maximum Audit Risk" percentile with possible complementary ITP settlement.",
+                "resolution-reason-5": "<strong>Critical Fiscal Risk:</strong> The Price/Cadastral Value ratio of 3.73x places the operation in a \"Maximum Audit Risk\" percentile with possible complementary ITP settlement.",
                 "resolution-reason-6": "<strong>Critical Exchange Risk:</strong> The monetary asymmetry (USD financing, EUR revenues) adds significant risk and high coverage costs.",
                 "resolution-reason-7": "<strong>Opaque Legal Structure:</strong> The lack of filed accounts and financial opacity of the selling company represents an unacceptable risk.",
                 "sotratec-final-verdict-title": "SOTRATEC FINAL VERDICT",
@@ -2516,7 +2980,7 @@
                 "loi-valuation-text": "Based on the real cash flow derived from an average rate of <b>2.35 €/h</b> and the certified technical limitations of the <i>WÖHR Parksafe 582</i> system (2,000 kg / 5.00 m limit), we set the acquisition value at:",
                 "loi-total-price": "TOTAL ACQUISITION PRICE (Equity Value)",
                 "loi-total-price-text": "(Twelve million one hundred fifty thousand euros)",
-                "loi-conditions-title": "2. SUSPENSIVE CONDITIONS ("SINE QUA NON" CONDITIONS)",
+                "loi-conditions-title": "2. SUSPENSIVE CONDITIONS (\"SINE QUA NON\" CONDITIONS)",
                 "loi-conditions-text": "This offer is strictly subject to the following milestones being met by the Seller:",
                 "loi-condition-1": "<b>Commercial Regularization:</b> Lifting the registry closure by filing Annual Accounts for fiscal years 2024 and 2025.",
                 "loi-condition-1-detail": "",
@@ -2533,17 +2997,68 @@
                 "madrid-date": "Madrid",
                 "disclaimer-title": "Legal Notice:",
                 "disclaimer-text": "This analysis is based on available information and subject to verification. It does not constitute a definitive investment recommendation. Consultation with specialized financial, legal, and real estate advisors is recommended before making any decision."
+            ,                "nav-14": "14. Committee Resolution",
+                "committee-title": "14. Investment Committee Resolution",
+                "committee-intro": "Below is the <strong>final</strong> resolution issued by the Investment Committee of <strong>ADVANCE INTELLIGENCE TECHNOLOGY</strong>, the financing entity, following the comprehensive evaluation of the operation. This resolution extends and formalizes the previous analysis from the strict lender's perspective, incorporating the technical grounds that make the operation <strong>structurally unviable</strong> and that motivate the <strong>definitive closure and archiving of the case</strong>.",
+                "print-pdf-button": "Print Committee Resolution (PDF)",
+                "committee-banner-subtitle": "Corporate Governance | Florida, USA | Est. 2024",
+                "status-rejected": "Case Closed / Rejected",
+                "status-rejected-en": "CASE CLOSED / REJECTED",
+                "meta-to": "To",
+                "meta-to-value": "General Management / Investment Committee",
+                "meta-subject": "Subject",
+                "meta-subject-value": "Definitive Financial Ruling — Parking Callao (Gran Vía 48, Madrid)",
+                "meta-date": "Date",
+                "meta-status": "Status",
+                "meta-status-value": "CASE CLOSED / REJECTED",
+                "resolution-type": "Rejection & Case Closure Resolution",
+                "resolution-type-en": "Definitive Rejection & Case Closure Resolution",
+                "dictamen-title": "1. Definitive Executive Ruling",
+                "dictamen-text": "Following a comprehensive risk evaluation regarding the financing/investment request for Parking Callao, <strong>ADVANCE INTELLIGENCE TECHNOLOGY declares the operation FINANCIALLY UNFEASIBLE</strong>. The firm decrees the <strong>DEFINITIVE CLOSURE AND ARCHIVING OF THE CASE</strong> without issuing a Term Sheet or considering re-evaluations, as the structure guarantees financial losses and capital destruction.",
+                "fundamentos-title": "2. Technical Grounds for Rejection (Lender's Perspective)",
+                "fundamentos-intro": "The buyer's report suffers from four structural deficiencies that, from the lender's standpoint, render the operation unviable. Below are the detected failures and their direct impact on ADVANCE INTELLIGENCE TECHNOLOGY's credit position:",
+                "denial-1-title": "Absolute Omission of Currency Risk (USD vs. EUR)",
+                "denial-1-failure-label": "The report's failure:",
+                "denial-1-failure-text": "It does not mention at any point that the financing is intended to be structured in <strong>USD</strong>, while the cash flow generated by the parking facility on Madrid's Gran Vía is 100% in <strong>Euros</strong>.",
+                "denial-1-impact-label": "Why it affects us:",
+                "denial-1-impact-text": "As financiers, if we lend in USD without requiring hedging, a <strong>10%–15% depreciation of the Euro</strong> would cause the borrower's direct default by making debt service more expensive in euros. The buyer's report ignores this currency mismatch.",
+                "denial-2-title": "Incorrect Collateral and LTV (Loan-to-Value) Assessment",
+                "denial-2-failure-label": "The report's failure:",
+                "denial-2-failure-text": "The report focuses on discussing whether <strong>€75,000/space</strong> is expensive or whether <strong>€45,000/space</strong> is fair for the buyer.",
+                "denial-2-impact-label": "Our perspective:",
+                "denial-2-impact-text": "It is not enough for us to say 'it's expensive.' From the investor's standpoint, the report does not establish the <strong>safe leverage ceiling</strong>. If the buyer intends to request a loan against the <strong>€24M</strong> valuation, our <strong>real LTV ratio would be 150%</strong> over the real asset (an unacceptable risk).",
+                "denial-3-title": "Absence of a Technical Contingency Plan (Robotic System)",
+                "denial-3-failure-label": "The report's failure:",
+                "denial-3-failure-text": "It briefly mentions the 'technical discrepancy' but does not quantify the <strong>risk of the robotic technology</strong>.",
+                "denial-3-impact-label": "Our perspective:",
+                "denial-3-impact-text": "In a robotic parking facility with <strong>320–345 spaces</strong>, a serious breakdown of the lifting system or the stacker cranes stops <strong>100% of the billing</strong>. The report does not require an engineering audit nor a <strong>reserve fund (CAPEX)</strong> for maintenance of the robotic system to guarantee that our collateral does not lose value.",
+                "denial-4-title": "Lack of Mandatory Legal Conditions (Conditions Precedent)",
+                "denial-4-failure-label": "The report's failure:",
+                "denial-4-failure-text": "It warns that the company has not filed accounts for <strong>2 years</strong>, but treats it as a commercial caution recommendation.",
+                "denial-4-impact-label": "Our perspective:",
+                "denial-4-impact-text": "For a lender, the lack of accounts for <strong>24 months</strong> must be an <strong>impassable red line (Deal Breaker)</strong>. Not a single euro/dollar can be disbursed without requiring it as a <strong>prior suspensive condition</strong> in the Term Sheet.",
+                "resolution-summary-title": "3. Executive Summary of the Grounds (Original from the Committee)",
+                "resolution-summary-1": "<strong>2.1 Unfeasibility & Default Risk (FX Mismatch):</strong> The mismatch between USD financing and 100% EUR revenues without currency hedging leads to guaranteed technical default upon FX fluctuations, ensuring capital losses for our firm.",
+                "resolution-summary-2": "<strong>2.2 Overvaluation & Collateral Deficit:</strong> The requested €75,000/space valuation (€24.0M) represents a 48.7% premium over market (€16.0M). Financing against €24M creates an unrecoverable deficit upon collateral enforcement.",
+                "resolution-summary-3": "<strong>2.3 Technical Vulnerability & Operational Risk:</strong> Lack of technical auditing and reserve provisions for the automated system exposes the asset to operational shutdowns with immediate cash-flow destruction.",
+                "resolution-summary-4": "<strong>2.4 Non-Compliance & Accounting Opacity:</strong> Lack of financial filings for 2 consecutive years constitutes an unresolvable breach of compliance standards, preventing any deal structuring.",
+                "sig-ceo": "Chief Executive Officer (CEO)",
+                "sig-company": "Advance Intelligence Technology",
+                "committee-footer": "Advance Intelligence Technology — Florida, USA | Confidential / Confidencial — File FIN-2024-CALLAO-048"
+
             }
         };
 
         const langButton = document.getElementById('langToggle');
         const htmlElement = document.documentElement;
         let currentLang = 'es';
+        window.currentLang = currentLang;
 
         // Función para cambiar el idioma
         function changeLanguage() {
             const newLang = currentLang === 'es' ? 'en' : 'es';
             currentLang = newLang;
+            window.currentLang = newLang;
             htmlElement.setAttribute('lang', newLang);
             langButton.textContent = newLang === 'es' ? 'EN' : 'ES';
 
@@ -2558,6 +3073,8 @@
                 }
             });
 
+            // Actualizar la fecha de la sección 14 al nuevo idioma
+            if (typeof updateResolutionDate === 'function') updateResolutionDate();
             // Guardar preferencia de idioma en localStorage
             localStorage.setItem('preferredLanguage', newLang);
         }
